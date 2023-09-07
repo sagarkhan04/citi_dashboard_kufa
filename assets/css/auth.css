@@ -1,0 +1,165 @@
+/*------------------------------------------------------------------------------------------
+# Miscellaneous
+------------------------------------------------------------------------------------------*/
+.auth-max-w-fixed {
+    max-width: 450px
+}
+
+.auth-title{
+    font-size: 25px;
+}
+
+@media (max-width: 767px) {
+    .auth-title {
+        font-size: 20px;
+    }
+}
+
+.card-text h1 {
+    font-size: 100px;
+}
+
+
+/*------------------------------------------------------------------------------------------
+# Button And Text Color
+------------------------------------------------------------------------------------------*/
+.btn-color-pf {
+    background-color: #175354 !important;
+    border-color: #165e4e;
+}
+
+.btn-color-pf:hover {
+    background-color: #0e473a !important;
+    border-color: #0e473a !important;
+}
+
+.link-color-pf {
+    color: #165e4e;
+    font-weight: 500;
+}
+
+.link-color-pf:hover {
+    color: #0e473a;
+    font-weight: 500;
+}
+
+
+/*------------------------------------------------------------------------------------------
+# Top Social Nav
+------------------------------------------------------------------------------------------*/
+.user-nav {
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.user-nav li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.top {
+    padding-top: 15px;
+}
+
+.user-nav a {
+    font-size: 20px;
+    color: #777777;
+    text-decoration: none;
+}
+
+.user-nav a:hover {
+    color: #0e504d;
+}
+
+.intro {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+@media (max-width: 767px) {
+    .bd-sidebar {
+        margin: 0 -.75rem 0rem;
+    }
+
+    .user-nav a {
+        font-size: 16px;
+        color: #777777;
+    }
+
+    .sm-d-none {
+        display: none;
+    }
+
+    .fa-sm-xl {
+        font-size: 1rem;
+    }
+
+    .user-nav {
+        text-align: center;
+    }
+}
+
+
+/*------------------------------------------------------------------------------------------
+# Dark Mode Toggle
+------------------------------------------------------------------------------------------*/
+.mode-toggle-icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    background: #d8e2ef;
+    border-radius: 50%;
+    color: #777;
+    font-size: 14px;
+}
+
+.mode-toggle-icon:hover {
+    background: #b6c1d2;
+}
+
+.icon-size {
+    font-size: 15px;
+}
+
+
+/*------------------------------------------------------------------------------------------
+# Footer Section
+------------------------------------------------------------------------------------------*/
+.footer-item {
+    font-size: 14px;
+}
+
+.footer-fixed-bottom {
+    border-top: 1px solid #dfe0e1;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1200;
+}
+
+.footer-content {
+    padding: 14px;
+}
+
+@media (max-width: 767px) {
+    .footer-item {
+        font-size: 12px;
+    }
+
+    .footer-content {
+        padding: 3px 0;
+    }
+}
+
+.version .fs--1 {
+    font-size: 14px;
+    margin-left: 2px;
+}
