@@ -29,6 +29,8 @@ if(isset($name_update_btn)){
     
 }
 
+// =======================--- password update section ---=======================
+
 if(isset($password_update)){
 
     $user_id = $_SESSION['admin_id'];
@@ -46,9 +48,9 @@ if(isset($password_update)){
         if(mysqli_fetch_assoc($select_password_query_connect)['password_check'] == 1 ){
             
             if($new_password){
-                if($new_password == $current_password){
+                if($new_password == $confirm_password){
                     $new_pass = md5($new_password);
-                    $update_query = "UPDATE users_project_1 SET password='$new_password' WHERE id='$user_id'";
+                    $update_query = "UPDATE users_project_1 SET password='$new_pass' WHERE id='$user_id'";
 
                     mysqli_query($db_connect,$update_query);
 
@@ -74,6 +76,8 @@ if(isset($password_update)){
 }
 
 
+// =======================--- image update section ---=======================
+
 
 if(isset($image_update)){
 
@@ -86,13 +90,13 @@ if(isset($image_update)){
     $extension = end($explode);
 
     $new_name = $user_id."-".$user_name."-".date("Y-m-d").".".$extension;
-    $path = "../images/profile-image/default-img.jpg".$new_name;
+    $path = "../images/profile/".$new_name;
     
     if(move_uploaded_file($image_temp_name,$path)){
         $image_update = "UPDATE users_project_1 SET image='$new_name' WHERE id='$user_id'";
 
         mysqli_query($db_connect,$image_update);
-        $user_name = $_SESSION['admin_image'] = $new_name;
+        $_SESSION['admin_image'] = $new_name;
 
         header('location: profile.php');
 

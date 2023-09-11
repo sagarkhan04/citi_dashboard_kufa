@@ -85,6 +85,8 @@ include("./extends/header.php");
                     <?php endif; unset($_SESSION['password_error']); ?>
                     <!--========================= error sms end  ==========================-->
 
+
+                    <!--========================= update password  ==========================-->
                     <div class="card">
                         <div class="card-header">
                             <h2>Update</h2>
@@ -96,9 +98,9 @@ include("./extends/header.php");
                                 <label for="exampleInputEmail1" class="form-label">Current Password</label>
                                 <input type="password" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" name="current_password">
-                                <!--=================== input Current Password end  ===================================-->
+                                <!--=================== input Current Password end  ===================-->
 
-                                <!--=================== input New Password  ===================================-->
+                                <!--=================== input New Password  ===================-->
                                 <label for="exampleInputEmail1" class="form-label">New Password</label>
                                 <input type="password" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" name="new_password">
@@ -128,8 +130,8 @@ include("./extends/header.php");
                                 <form action="profile_update.php" method="POST" enctype="multipart/form-data">
 
                                     <!--=================== input Current Password ===================================-->
-                                    <img src="../images/profile-image/<?= $_SESSION['admin_image'] ?>" alt=""
-                                        style="border-radius: 50%;"><br>
+                                    <img src="../images/profile/<?= $_SESSION['admin_image'] ?>" alt=""
+                                        style="border-radius: 50%; width:100px; height:100px;"><br>
                                     <label for="exampleInputEmail1" class="form-label">image</label>
                                     <input type="file" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" name="image">

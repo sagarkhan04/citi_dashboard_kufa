@@ -56,7 +56,7 @@ if(!isset($_SESSION['admin_id'])){
                 <a href="index.html" class="logo-icon"><span class="logo-text">Neptune</span></a>
                 <div class="sidebar-user-switcher user-activity-online">
                     <a href="#">
-                        <img src="../images/profile-image/<?= $_SESSION['admin_image'] ?>" style="border-radius: 50%;">
+                        <img src="../images/profile/<?= $_SESSION['admin_image'] ?>" style="border-radius: 50%;">
                         <span class="activity-indicator"></span>
 
                         <!--========================= dashboard profile name & email ==========================-->
