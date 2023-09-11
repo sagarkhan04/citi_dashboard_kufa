@@ -56,13 +56,14 @@ if(!isset($_SESSION['admin_id'])){
                 <a href="index.html" class="logo-icon"><span class="logo-text">Neptune</span></a>
                 <div class="sidebar-user-switcher user-activity-online">
                     <a href="#">
-                        <img src="../assets/images/avatars/avatar.png">
+                        <img src="../images/profile-image/<?= $_SESSION['admin_image'] ?>" style="border-radius: 50%;">
                         <span class="activity-indicator"></span>
 
                         <!--========================= dashboard profile name & email ==========================-->
-                        <span class="user-info-text"><?= $_SESSION['admin_name'] ?><br><span
-                                class="user-state-info"><?= $_SESSION['admin_email']?>l</span></span>
+                        <span class="user-info-text"><?= $_SESSION['admin_name'] ?><br>
+                            <span class="user-state-info"><?= $_SESSION['admin_email']?></span></span>
                         <!--========================= dashboard profile name & email ==========================-->
+
 
                     </a>
                 </div>
@@ -81,7 +82,7 @@ if(!isset($_SESSION['admin_id'])){
                         <a href="profile.php" class="active"><i class="material-icons-two-tone">
                                 account_circle</i>Profile</a>
                     </li>
-                    <li>
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'mailbox.php') ? 'active-page': '' ?>">
                         <a href="#"><i class="material-icons-two-tone">inbox</i>Mailbox<span
                                 class="badge rounded-pill badge-danger float-end">87</span></a>
                     </li>

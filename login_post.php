@@ -23,6 +23,7 @@ if(mysqli_fetch_assoc($select_connect)['validity'] == 1){
    $_SESSION['admin_id'] = $user['id'];
    $_SESSION['admin_name'] = $user['name'];
    $_SESSION['admin_email'] = $user['email'];
+   $_SESSION['admin_image'] = $user['image'];
 
  
    $_SESSION['login_success'] = "WELCOME, Login sucrssfuly complate";

@@ -40,7 +40,7 @@ if ($comfirm_password){
         header("location: registration.php");
     }
 }else{
-    $_SESSION['cn_password_error'] = "Please Enter Your Comfirm Password";
+    $_SESSION['cn_password_error'] = "Please Enter Your Comfirm Password";  
     header("location: registration.php");
 }
 
@@ -73,42 +73,6 @@ if(mysqli_fetch_assoc($email_validity_connect)['validity'] == 0){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?>

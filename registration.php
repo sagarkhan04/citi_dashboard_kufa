@@ -16,7 +16,7 @@ session_start();
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Neptune - Responsive Admin Dashboard Template</title>
+    <title>Registration | Dashboard</title>
 
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -54,6 +54,8 @@ session_start();
             <p class="auth-description">Please enter your credentials to create an account.<br>Already have an account?
                 <a href="login.php">Sign In</a>
             </p>
+
+
             <form action="registration_post_output.php" method="POST">
 
                 <!--========================= error sms  ==========================-->
@@ -75,7 +77,8 @@ session_start();
 
                     <!--========================= Name input  ==========================-->
                     <label for="signUpUsername" class="form-label">Name</label>
-                    <!--============ php code input error  =============-->
+
+                    <!--============ php code input error (invalid)  =============-->
                     <input type="text"
                         class="form-control m-b-md <?= (isset($_SESSION['name_error'])) ? 'is-invalid' : ' ' ?>"
                         id="signUpUsername" aria-describedby="signUpUsername" placeholder="Enter Name" name="name">
@@ -93,6 +96,7 @@ session_start();
 
                     <!--============ php code end =============-->
                     <!--========================= Name input end  ==========================-->
+
                     <!--========================= Email input  ==========================-->
 
                     <label for="signUpEmail" class="form-label">Email address</label>
