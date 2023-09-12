@@ -2,6 +2,9 @@
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
 
 <!-- Javascripts -->
 <script src="../assets/plugins/jquery/jquery-3.5.1.min.js"></script>

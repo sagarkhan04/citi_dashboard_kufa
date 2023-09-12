@@ -47,6 +47,10 @@ if(!isset($_SESSION['admin_id'])){
 
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/neptune.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/neptune.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -87,10 +91,26 @@ if(!isset($_SESSION['admin_id'])){
                                 class="badge rounded-pill badge-danger float-end">87</span></a>
                     </li>
 
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'services.php') ? 'active-page': '' ?>">
+                        <a href="services.php"><i class="material-icons-two-tone">home_repair_service</i>Services<i
+                                class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="services.php">Services show</a>
+                            </li>
+                            <li>
+                                <a href="service_add.php">Services add</a>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
             <!--========================= sidebar-title end ==========================-->
         </div>
+
+
         <div class="app-container">
             <div class="search">
                 <form>
@@ -270,16 +290,6 @@ if(!isset($_SESSION['admin_id'])){
                     </div>
                 </nav>
             </div>
-            <!-- <div class="app-content">
+            <div class="app-content">
                 <div class="content-wrapper">
                     <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <div class="page-description">
-                                    <h1>Dashboard</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
