@@ -1,0 +1,8 @@
+== profile page
+
+* current password jate bebohar na korte pare
+* password preg match  bebohar  korte kora (new password)
+* password change hoyna
+* inage change hoyna 
+*
+*
