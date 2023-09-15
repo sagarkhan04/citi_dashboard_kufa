@@ -10,6 +10,24 @@ $users = mysqli_fetch_assoc($users_connect);
 
 ?>
 
+<?php 
+
+
+// $_SESSION['service_id'] = $sercice['id'];
+//    $_SESSION['title'] = $service['title'];
+//    $_SESSION['description'] = $service['description'];
+//    $_SESSION['icon'] = $service['icon'];
+
+// $service_select_query ="SELECT * FROM services";
+
+// $service_connect = mysqli_query($db_connect,$service_select_query);
+
+// $sercice = mysqli_fetch_assoc($service_connect);
+
+
+
+?>
+
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -270,7 +288,7 @@ $users = mysqli_fetch_assoc($users_connect);
                     <div class="col-lg-4 col-md-6">
                         <div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.2s">
                             <i class="fab fa-react"></i>
-                            <h3>Creative Design</h3>
+                            <h3><?= $_SESSION['title'] ?></h3>
                             <p>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                                 indust.

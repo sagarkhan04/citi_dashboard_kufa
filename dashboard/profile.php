@@ -140,7 +140,7 @@ include("./extends/header.php");
 
 
                                     <!--=================== input confirm Password ===================================-->
-                                    <button class="btn btn-success mt-4" name="image_update">password update</button>
+                                    <button class="btn btn-success mt-4" name="image_update">Image update</button>
                                 </form>
                             </div>
                         </div>

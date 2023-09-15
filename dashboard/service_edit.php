@@ -4,14 +4,11 @@ include('./extends/header.php');
 include('./icons.php');
 include('../config/db.php');
 
-    $id = $_GET['edit_id'];
+$id = $_GET['edit_id'];
 
-    $selecte_quary = "SELECT * FROM services WHERE id='$id'";
-
-    $connect = mysqli_query($db_connect,$selecte_quary);
-
-    $service = mysqli_fetch_assoc($connect);
- 
+$select_quary = "SELECT * FROM services WHERE id='$id'";
+$connect = mysqli_query($db_connect,$select_quary);
+$service = mysqli_fetch_assoc($connect);
 
 ?>
 
@@ -33,30 +30,30 @@ include('../config/db.php');
 
 
                 <!--========================= error sms  ==========================-->
-                <?php if(isset($_SESSION['service_error_edit'])) : ?>
+                <?php if(isset($_SESSION['service_error'])) : ?>
                 <div class="alert alert-custom" role="alert">
                     <div class="custom-alert-icon icon-danger"><i class="material-icons-outline">close</i></div>
                     <div class="alert-content">
                         <span class="alert-title">SORRY</span>
-                        <span class="alert-text"><?= ($_SESSION['service_error_edit']); ?></span>
+                        <span class="alert-text"><?= ($_SESSION['service_error']); ?></span>
                     </div>
 
                 </div>
-                <?php endif; unset($_SESSION['service_error_edit']); ?>
+                <?php endif; unset($_SESSION['service_error']); ?>
                 <!--========================= error sms end  ==========================-->
 
 
                 <!--========================= success sms  ==========================-->
-                <?php if(isset($_SESSION['service_update'])) : ?>
+                <?php if(isset($_SESSION['service_insert'])) : ?>
                 <div class="alert alert-custom" role="alert">
                     <div class="custom-alert-icon icon-success"><i class="material-icons-outline">Done</i></div>
                     <div class="alert-content">
                         <span class="alert-title">Successfully</span>
-                        <span class="alert-text"><?= ($_SESSION['service_update']); ?></span>
+                        <span class="alert-text"><?= ($_SESSION['service_insert']); ?></span>
                     </div>
 
                 </div>
-                <?php endif; unset($_SESSION['service_update']); ?>
+                <?php endif; unset($_SESSION['service_insert']); ?>
                 <!--========================= success sms end  ==========================-->
 
 

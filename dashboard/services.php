@@ -94,7 +94,7 @@ $serial = 0;
                             </td>
                             <!--========================= active status end ==========================-->
                             <td>
-                                <a href="service_post.php?edit_id=<?= $service['id'] ?>"
+                                <a href="service_edit.php?edit_id=<?= $service['id'] ?>"
                                     class="btn btn-secondary btn-sm">Edit</a>
 
                                 <a href="service_post.php?delete_id=<?= $service['id'] ?>"
