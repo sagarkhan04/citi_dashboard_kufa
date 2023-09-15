@@ -104,6 +104,7 @@ include("./extends/header.php");
                                 <label for="exampleInputEmail1" class="form-label">New Password</label>
                                 <input type="password" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" name="new_password">
+
                                 <!--=================== input New Password end ===================================-->
 
                                 <!--=================== input confirm Password ===================================-->

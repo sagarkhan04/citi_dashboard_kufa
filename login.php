@@ -72,7 +72,7 @@ session_start();
                 <!--========================= success sms end  ==========================-->
 
 
-                <!--========================= success sms  ==========================-->
+                <!--========================= error sms  ==========================-->
                 <?php if(isset($_SESSION['login_error'])) : ?>
                 <div class="alert alert-custom" role="alert">
                     <div class="custom-alert-icon icon-danger"><i class="material-icons-outline">close</i></div>
@@ -83,7 +83,7 @@ session_start();
 
                 </div>
                 <?php endif; unset($_SESSION['login_error']); ?>
-                <!--========================= success sms end  ==========================-->
+                <!--========================= error sms end  ==========================-->
 
                 <div class="auth-credentials m-b-xxl">
                     <label for="signInEmail" class="form-label">Email address</label>

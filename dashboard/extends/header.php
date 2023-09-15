@@ -196,9 +196,12 @@ if(!isset($_SESSION['admin_id'])){
                                 </li>
                                 <li class="nav-item hidden-on-mobile">
                                     <a class="nav-link language-dropdown-toggle" href="#" id="languageDropDown"
-                                        data-bs-toggle="dropdown"><img src="../assets/images/flags/us.png" alt=""></a>
+                                        data-bs-toggle="dropdown"><img src="../assets/images/flags/bd.png" alt=""
+                                            class="rounded-circle"></a>
                                     <ul class="dropdown-menu dropdown-menu-end language-dropdown"
                                         aria-labelledby="languageDropDown">
+                                        <li><a class="dropdown-item" href="#"><img src="../assets/images/flags/bd.png"
+                                                    alt="" class="rounded-circle">Bangladesh</a></li>
                                         <li><a class="dropdown-item" href="#"><img
                                                     src="../assets/images/flags/germany.png" alt="">German</a></li>
                                         <li><a class="dropdown-item" href="#"><img

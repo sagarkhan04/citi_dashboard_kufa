@@ -8,8 +8,6 @@ $users_connect = mysqli_query($db_connect,$users_select_query);
 
 $users = mysqli_fetch_assoc($users_connect);
 
-
-
 ?>
 
 

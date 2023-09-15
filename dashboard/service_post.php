@@ -1,31 +1,9 @@
-== profile page
-
-* current password jate bebohar na korte pare
-* password preg match  bebohar  korte kora (new password)
-* password change hoyna
-* inage change hoyna 
-* service page a input error dekhano  baki ache
-*
-
-
-
-
-
-
-
-== Data base (SQLI)
-
-* $db_connect = mysqli_connect('localhost','root','','project_creative');
-* $select = "SELECT * FROM  services";
-* $delete_quary = "DELETE FROM services WHERE id='$id'";
-
-== Service Post
-
-
 <?php
 
-include('../config/db.php');
+
 session_start();
+include('../config/db.php');
+
 
 
 

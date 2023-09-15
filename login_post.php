@@ -11,8 +11,8 @@ if ($email && $password){
     $encrypt = md5($password);
     
     $select_users = "SELECT COUNT(*) as validity FROM users_project_1 where email='$email' AND password='$encrypt'";
-
-$select_connect = mysqli_query($db_connect,$select_users);
+    
+    $select_connect = mysqli_query($db_connect,$select_users);
 
 if(mysqli_fetch_assoc($select_connect)['validity'] == 1){
     $select_info = "SELECT * FROM users_project_1 WHERE email='$email'";
