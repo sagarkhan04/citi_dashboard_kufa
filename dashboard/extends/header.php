@@ -105,6 +105,19 @@ if(!isset($_SESSION['admin_id'])){
                         </ul>
                     </li>
 
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'facts.php') ? 'active-page': '' ?>">
+                        <a href="facts.php"><i class="material-icons-two-tone">info</i>Facts<i
+                                class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="facts_add.php">Fact add</a>
+                            </li>
+                            <li>
+                                <a href="facts_show.php">Fact show</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <!--========================= sidebar-title end ==========================-->

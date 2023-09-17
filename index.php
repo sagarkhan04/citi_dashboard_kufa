@@ -8,25 +8,12 @@ $users_connect = mysqli_query($db_connect,$users_select_query);
 
 $users = mysqli_fetch_assoc($users_connect);
 
-?>
-
-<?php 
-
-
-// $_SESSION['service_id'] = $sercice['id'];
-//    $_SESSION['title'] = $service['title'];
-//    $_SESSION['description'] = $service['description'];
-//    $_SESSION['icon'] = $service['icon'];
-
-// $service_select_query ="SELECT * FROM services";
-
-// $service_connect = mysqli_query($db_connect,$service_select_query);
-
-// $sercice = mysqli_fetch_assoc($service_connect);
-
-
+$select_facts = "SELECT * FROM  facts";
+$facts = mysqli_query($db_connect,$select_facts);
 
 ?>
+
+
 
 
 <!doctype html>
@@ -288,7 +275,7 @@ $users = mysqli_fetch_assoc($users_connect);
                     <div class="col-lg-4 col-md-6">
                         <div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.2s">
                             <i class="fab fa-react"></i>
-                            <h3><?= $_SESSION['title'] ?></h3>
+                            <h3>UNLIMITED FEATURES</h3>
                             <p>
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                                 indust.
@@ -445,50 +432,19 @@ $users = mysqli_fetch_assoc($users_connect);
             <div class="container">
                 <div class="fact-wrap">
                     <div class="row justify-content-between">
+                        <?php foreach($facts as $fact) :?>
                         <div class="col-xl-2 col-lg-3 col-sm-6">
                             <div class="fact-box text-center mb-50">
                                 <div class="fact-icon">
-                                    <i class="flaticon-award"></i>
+                                    <i class="<?php echo $fact["icon"]; ?>"></i>
                                 </div>
                                 <div class="fact-content">
-                                    <h2><span class="count">245</span></h2>
-                                    <span>Feature Item</span>
+                                    <h2><span class="count"><?php echo $fact["number"]; ?></span></h2>
+                                    <span><?php echo $fact["info_name"]; ?></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="fact-box text-center mb-50">
-                                <div class="fact-icon">
-                                    <i class="flaticon-like"></i>
-                                </div>
-                                <div class="fact-content">
-                                    <h2><span class="count">345</span></h2>
-                                    <span>Active Products</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="fact-box text-center mb-50">
-                                <div class="fact-icon">
-                                    <i class="flaticon-event"></i>
-                                </div>
-                                <div class="fact-content">
-                                    <h2><span class="count">39</span></h2>
-                                    <span>Year Experience</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-3 col-sm-6">
-                            <div class="fact-box text-center mb-50">
-                                <div class="fact-icon">
-                                    <i class="flaticon-woman"></i>
-                                </div>
-                                <div class="fact-content">
-                                    <h2><span class="count">3</span>k</h2>
-                                    <span>Our Clients</span>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>

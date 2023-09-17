@@ -62,7 +62,7 @@ $serial = 0;
             <div class="card-header">
                 <h3>Service List</h3>
             </div>
-            <div class="card-body">
+            <div class="card-body" style="overflow-y: scroll;">
                 <table class="table table-striped">
                     <thead class="table-dark">
 
