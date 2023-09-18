@@ -55,7 +55,7 @@ if(!isset($_SESSION['admin_id'])){
 
 <body>
     <div class="app align-content-stretch d-flex flex-wrap">
-        <div class="app-sidebar">
+        <div class="app-sidebar" style="overflow-y: scroll;">
             <div class="logo">
                 <a href="index.html" class="logo-icon"><span class="logo-text">Neptune</span></a>
                 <div class="sidebar-user-switcher user-activity-online">
@@ -91,6 +91,7 @@ if(!isset($_SESSION['admin_id'])){
                                 class="badge rounded-pill badge-danger float-end">87</span></a>
                     </li>
 
+                    <!--==================== service session ====================-->
 
                     <li class="<?= (basename($_SERVER['PHP_SELF']) == 'services.php') ? 'active-page': '' ?>">
                         <a href="services.php"><i class="material-icons-two-tone">home_repair_service</i>Services<i
@@ -105,9 +106,10 @@ if(!isset($_SESSION['admin_id'])){
                         </ul>
                     </li>
 
+                    <!--==================== facts session ====================-->
 
-                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'facts.php') ? 'active-page': '' ?>">
-                        <a href="facts.php"><i class="material-icons-two-tone">info</i>Facts<i
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'facts_post.php') ? 'active-page': '' ?>">
+                        <a href="facts_show.php"><i class="material-icons-two-tone">info</i>Facts<i
                                 class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
                         <ul class="sub-menu">
                             <li>
@@ -115,6 +117,21 @@ if(!isset($_SESSION['admin_id'])){
                             </li>
                             <li>
                                 <a href="facts_show.php">Fact show</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--==================== portfolio session ====================-->
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'portfolio_post.php') ? 'active-page': '' ?>">
+                        <a href="portfolio_post.php"><i class="material-icons-two-tone">design_services</i>Portfolio<i
+                                class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="portfolio_add.php">portfolio add</a>
+                            </li>
+                            <li>
+                                <a href="portfolio_show.php">portfolio show</a>
                             </li>
                         </ul>
                     </li>

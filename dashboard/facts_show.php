@@ -1,8 +1,8 @@
 <?php 
 
 include('./extends/header.php');
-include('../config/db.php');
 
+include('../config/db.php');
 
 
 $select_facts = "SELECT * FROM  facts";
@@ -15,7 +15,7 @@ $serial = 0;
 <div class="row">
     <div class="col">
         <div class="page-description">
-            <h1>Fact</h1>
+            <h1>Fact Show</h1>
         </div>
     </div>
     <div class="col-12">
@@ -83,7 +83,7 @@ $serial = 0;
                                 <a href="facts_edit.php?edit_id=<?= $fact['id'] ?>"
                                     class="btn btn-secondary btn-sm">Edit</a>
 
-                                <a href="facts_show.php?delete_id=<?= $fact['id'] ?>"
+                                <a href="facts_post.php?delete_id=<?= $fact['id'] ?>"
                                     class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>

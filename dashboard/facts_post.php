@@ -4,6 +4,9 @@ include('../config/db.php');
 
 session_start();
 
+
+//   ====== post session (data base insert ) ======
+
 if(isset($_POST['facts_btn'])){
 
 $number = $_POST['number'];
@@ -27,6 +30,8 @@ if($number && $info_name && $icon){
     
 }
 
+//   ====== show delete session ======
+
 if(isset($_GET['delete_id'])){
     $id = $_GET['delete_id'];
 
@@ -41,6 +46,8 @@ if(isset($_GET['delete_id'])){
 
 }
 
+
+//   ====== show edit session ======
 
 if(isset($_POST['facts_edit_btn'])){
 
