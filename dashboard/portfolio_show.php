@@ -31,6 +31,18 @@ $serial = 0;
     </div>
     <?php endif; unset($_SESSION['portfolio_insert']); ?>
     <!--========================= success sms end  ==========================-->
+
+    <!--========================= delete success sms  ==========================-->
+    <?php if(isset($_SESSION['portfolio_delete'])) : ?>
+    <div class="alert alert-custom" role="alert">
+        <div class="custom-alert-icon icon-success"><i class="material-icons-outline">done</i></div>
+        <div class="alert-content">
+            <span class="alert-title">Successfully</span>
+            <span class="alert-text"><?= ($_SESSION['portfolio_delete']); ?></span>
+        </div>
+    </div>
+    <?php endif; unset($_SESSION['portfolio_delete']); ?>
+    <!--========================= delete success sms end  ==========================-->
     <div class="col-12">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-container">
@@ -64,17 +76,18 @@ $serial = 0;
                         <?php foreach($portfolios as $portfolio) :?>
                         <tr>
                             <th scope="row"><?= ++$serial ?></th>
-                            <td><img src="../images/portfolio/<?= $portfolio["image"]; ?>" alt="image"></td>
+                            <td><img src="../images/portfolio/<?= $portfolio['image']; ?>" alt="image"
+                                    style="width:80px; height:60px;"></td>
                             <td><?= $portfolio["title"]; ?></td>
                             <td><?= $portfolio["design_name"]; ?></td>
                             <td><?= $portfolio['description']; ?></td>
                             <td><button class="btn btn-primary">active</button></td>
 
                             <td>
-                                <a href="facts_edit.php?edit_id=<?= $fact['id'] ?>"
+                                <a href="portfolio_edit.php?edit_id=<?= $portfolio['id'] ?>"
                                     class="btn btn-secondary btn-sm">Edit</a>
 
-                                <a href="facts_post.php?delete_id=<?= $fact['id'] ?>"
+                                <a href="portfolio_post.php?delete_id=<?= $portfolio['id'] ?>"
                                     class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
