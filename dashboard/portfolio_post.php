@@ -18,11 +18,11 @@ if (isset($_POST['insert_btn'])) {
     $explode = explode('.',$image);
     $extension = end($explode);
 
+    
 
     $new_name = date("Y-m-d-s").".".$extension;
     $path = "../images/portfolio/".$new_name;
 
-    
     if($title && $design_name && $description && $image){
         move_uploaded_file($image_temp_name, $path);
 

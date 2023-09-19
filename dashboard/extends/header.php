@@ -128,10 +128,25 @@ if(!isset($_SESSION['admin_id'])){
                                 class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="portfolio_add.php">portfolio add</a>
+                                <a href="portfolio_add.php">Portfolio add</a>
                             </li>
                             <li>
-                                <a href="portfolio_show.php">portfolio show</a>
+                                <a href="portfolio_show.php">Portfolio show</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--==================== testimonial session ====================-->
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'testimonial_post.php') ? 'active-page': '' ?>">
+                        <a href="testimonial_post.php"><i class="material-icons-two-tone">edit_note</i>Testimonial<i
+                                class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="testimonial_add.php">Testimonial add</a>
+                            </li>
+                            <li>
+                                <a href="testimonial_show.php">Testimonial show</a>
                             </li>
                         </ul>
                     </li>
