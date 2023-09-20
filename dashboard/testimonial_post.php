@@ -2,17 +2,29 @@
 
 include('../config/db.php');
 
+session_start();
+ //================== post session ==================
+
 if(isset($_POST['testimonial_btn'])){
 
 $name = $_POST['name'];
 $sub_name = $_POST['sub_name'];
 $description = $_POST['description'];
-$image = $_FILES['image'] ['name'];
 
+$image = $_FILES['image'] ['name'];
+$image_temp_name = $_FILES['image'] ['tmp_name'];
+$explode = explode('.',$image);
+$extension = end($explode);
+
+
+$new_name = date("Y-m-d-s").".".$extension;
+$path = "../images/testimonial/".$new_name;
 
 if($name && $sub_name && $description && $image){
 
-    $testimonial_quary = "INSERT INTO testimonials (name,sub_name,description,image) VALUES ('$name','$sub_name','$description','$image')";
+    move_uploaded_file($image_temp_name, $path);
+    
+    $testimonial_quary = "INSERT INTO testimonials (name,sub_name,description,image) VALUES ('$name','$sub_name','$description','$new_name')";
 
     mysqli_query($db_connect,$testimonial_quary);
 
@@ -25,6 +37,7 @@ if($name && $sub_name && $description && $image){
 
 }
 
+ //================== delete session ==================
 
 if(isset($_GET['delete_id'])){
     $id = $_GET['delete_id'];
@@ -36,6 +49,41 @@ if(isset($_GET['delete_id'])){
 
     $_SESSION['testimonial_delete'] = 'Testimonial Delete Successfully';
     header("location: testimonial_show.php");
+
+}
+
+//================== update(edit) session end ==================
+
+ if(isset($_POST['testimonial_update_btn'])){
+
+    $name = $_POST['name'];
+    $sub_name = $_POST['sub_name'];
+    $description = $_POST['description'];
+    
+    $image = $_FILES['image'] ['name'];
+    $image_temp_name = $_FILES['image'] ['tmp_name'];
+    $explode = explode('.',$image);
+    $extension = end($explode);
+    
+    $new_name = date("Y-m-d-s").".".$extension;
+    $path = "../images/testimonial/".$new_name;
+
+
+    
+    if($name && $sub_name && $description){
+    
+        $testimonial_update_quary = "UPDATE testimonials SET name='$name',sub_name='$sub_name',description='$description'";
+    
+        mysqli_query($db_connect,$testimonial_update_quary);
+    
+        $_SESSION['testimonial_insert'] = 'Testimonial Insert Successfully';
+            header("location: testimonial_show.php");
+    }else{
+        $_SESSION['testimonial_error'] = 'Testimonial Insert Error,Please Input Field';
+            header("location: testimonial_edit.php");
+    }
+
+
 
 }
 

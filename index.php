@@ -421,10 +421,12 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                             <?php foreach($testimonials as $testimonial) :?>
                             <div class="single-testimonial text-center">
                                 <div class="testi-avatar">
-                                    <img src="./frontend_assets/img/images/testi_avatar.png" alt="img">
+                                    <img src="./images/testimonial/<?= $testimonial['image']?>" alt="img"
+                                        style="border-radius: 50%; width:100px; height:100px;">
                                 </div>
-                                <div class="testi-content">
-                                    <h4><span>“</span><?= $testimonial['description']?><span>”</span></h4>
+                                <div class=" testi-content">
+                                    <h4 class="fst-italic"><span>“</span><?= $testimonial['description']?><span>”</span>
+                                    </h4>
                                     <div class="testi-avatar-info">
                                         <h5><?= $testimonial['name']?></h5>
                                         <span><?= $testimonial['sub_name']?></span>

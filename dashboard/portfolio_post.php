@@ -60,7 +60,7 @@ if (isset($_POST['insert_btn'])) {
  //================== delete session end ==================
 
 
- //================== update session end ==================
+ //================== update(edit) session end ==================
 
     if (isset($_POST['update_btn'])) {
    
@@ -74,27 +74,16 @@ if (isset($_POST['insert_btn'])) {
         $explode = explode('.',$image);
         $extension = end($explode);
     
-    
         $new_name = date("Y-m-d-s").".".$extension;
     
         $path = "../images/portfolio/".$new_name;
     
         
-        // if(move_uploaded_file($image_temp_name,$path)){
-        //     $image_update = "UPDATE portfolios SET image='$new_name' WHERE ";
-    
-        //     mysqli_query($db_connect,$image_update);
-    
-    
-    
-        //     header('location: portfolio_add.php');
-    
-        // }
     
     
         
-        if($title && $design_name && $description && $image){
-            $update_portfolio = "UPDATE portfolios SET title='$title', design_name='$design_name', description='$description', image='image' WHERE id='$id'";
+        if($title && $design_name && $description){
+            $update_portfolio = "UPDATE portfolios SET title='$title', design_name='$design_name', description='$description'";
     
             mysqli_query($db_connect,$update_portfolio);
     
@@ -105,8 +94,27 @@ if (isset($_POST['insert_btn'])) {
             $_SESSION['portfolio_insert_error'] = 'Portfolio Insert Error';
             header("location: portfolio_edit.php");
         }
+
+  
+   
+        // if($image){
+
+        //     move_uploaded_file($image_temp_name, $path);
+
+        //     $update_portfolio = "UPDATE portfolios SET image='$image', WHERE id='$id'";
     
-        }
+        //     mysqli_query($db_connect,$update_portfolio);
+
+
+
+        //     $_SESSION['portfolio_insert'] = 'Portfolio Insert Successfully';
+        //     header("location: portfolio_show.php");
+        // }else{
+        //     $_SESSION['portfolio_insert_error'] = 'Portfolio Insert Error';
+        //     header("location: portfolio_edit.php");
+        // }
+    
+    }
 
         //================== update session end ==================
 ?>

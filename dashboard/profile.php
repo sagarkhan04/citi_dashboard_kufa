@@ -130,13 +130,13 @@ include("./extends/header.php");
                             <div class="card-body">
                                 <form action="profile_update.php" method="POST" enctype="multipart/form-data">
 
-                                    <!--=================== input Current Password ===================================-->
+                                    <!--=================== image update ===================================-->
                                     <img src="../images/profile/<?= $_SESSION['admin_image'] ?>" alt=""
                                         style="border-radius: 50%; width:100px; height:100px;"><br>
                                     <label for="exampleInputEmail1" class="form-label">image</label>
                                     <input type="file" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp" name="image">
-                                    <!--=================== input Current Password end  ===================================-->
+                                    <!--=================== image update end  ===================================-->
 
 
                                     <!--=================== input confirm Password ===================================-->

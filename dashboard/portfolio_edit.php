@@ -48,7 +48,7 @@ $portfolio = mysqli_fetch_assoc($connect);
                         <input type="text" class="form-control" placeholder="Title" name="title"
                             value="<?= $portfolio['title'] ?>">
 
-                        <input type="text" name="portfolio_id" value="<?= $portfolio['id'] ?>">
+                        <input hidden type="text" name="portfolio_id" value="<?= $portfolio['id'] ?>">
 
                     </div>
                     <div class="col-md-6">
@@ -62,6 +62,10 @@ $portfolio = mysqli_fetch_assoc($connect);
                         <input type="text" class="form-control" placeholder="Description..." name="description"
                             value="<?= $portfolio['description'] ?>">
 
+                    </div>
+                    <div>
+                        <img src="../images/portfolio/<?= $portfolio['image']; ?>" alt=""
+                            style="width:150px; height:150px;">
                     </div>
                     <div class="col-md-7">
                         <label for="" class="form-label">Portfolio Image</label>

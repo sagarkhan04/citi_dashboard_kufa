@@ -75,10 +75,13 @@ $serial = 0;
                         <?php foreach($testimonials as $testimonial) :?>
                         <tr>
                             <th scope="row"><?= ++$serial ?></th>
-                            <td><img src="../images/testimonial/" alt="" style="width:80px; height:60px;"></td>
+                            <td><img src="../images/testimonial/<?= $testimonial['image']?>" alt=""
+                                    style="width:80px; height:60px;"></td>
                             <td><?= $testimonial['name']?></td>
                             <td><?= $testimonial['sub_name']?></td>
-                            <td><?= $testimonial['description']?></td>
+                            <td><textarea name="" id="" cols="50" rows="02"
+                                    disabled><?= $testimonial['description']?></textarea>
+                            </td>
 
                             <td>
                                 <a href="testimonial_edit.php?edit_id=<?= $testimonial['id'] ?>"

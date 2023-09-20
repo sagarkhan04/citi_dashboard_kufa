@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 19, 2023 at 06:40 PM
+-- Generation Time: Sep 20, 2023 at 03:47 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -32,7 +32,7 @@ CREATE TABLE `testimonials` (
   `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `sub_name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(100) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'default.jpg',
+  `image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `status` varchar(20) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -41,8 +41,8 @@ CREATE TABLE `testimonials` (
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `sub_name`, `description`, `image`, `status`) VALUES
-(6, 'Aiko Hill', 'Reagan Ball', 'An event is a message sent by an object to signal the occur rence\n                                        of an action. The action can causd user interaction such as a button click, or\n                                        it can result', '7.png', 'active'),
-(7, 'Courtney Rodriquez', 'Wylie Hoffman', 'An event is a message sent by an object to signal the occur rence\n                                        of an action. The action can causd user interaction such as a button click, or\n                                        it can result', '4.png', 'active');
+(14, 'Sagar Khan', 'Brett Wilson', 'কাশফুল নয়,\r\nমানিব্যাগে cash full থাকলেই বছরের ১২ মাসই শরৎকাল মনে হয়!😬', '2023-09-20-53.jpg', 'active'),
+(15, 'Sagar Khan', 'Brett Wilson', 'কাশফুল নয়,\r\nমানিব্যাগে cash full থাকলেই বছরের ১২ মাসই শরৎকাল মনে হয়!😬', '2023-09-20-47.png', 'active');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +62,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
