@@ -14,8 +14,9 @@ $serial = 0;
 
 <div class="row">
     <div class="col">
-        <div class="page-description">
+        <div class="page-description d-flex justify-content-between">
             <h1>Fact Show</h1>
+            <a href="facts_add.php" class="btn btn-primary">Add</a>
         </div>
     </div>
     <div class="col-12">

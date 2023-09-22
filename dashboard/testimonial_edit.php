@@ -45,6 +45,7 @@ $testimonial = mysqli_fetch_assoc($connect);
                         <input type="text" class="form-control" placeholder="Name" name="name"
                             value="<?= $testimonial['name']?>">
 
+                        <input hidden type="text" class="form-control" name="id" value="<?= $testimonial['id']?>">
                     </div>
                     <div class="col-md-6">
                         <label for="" class="form-label">Sub Name</label>

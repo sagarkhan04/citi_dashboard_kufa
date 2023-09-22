@@ -98,10 +98,10 @@ if(!isset($_SESSION['admin_id'])){
                                 class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="services.php">Services show</a>
+                                <a href="service_add.php">Services add</a>
                             </li>
                             <li>
-                                <a href="service_add.php">Services add</a>
+                                <a href="services.php">Services show</a>
                             </li>
                         </ul>
                     </li>

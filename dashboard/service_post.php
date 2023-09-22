@@ -42,10 +42,12 @@ if(isset($_GET['delete_id'])){
 
 
 if(isset($_POST['edit_btn'])){
+
+    $id = $_POST['service_id'];
     $title = $_POST['title'];
     $description = $_POST['description'];
     $icon = $_POST['icon'];
-    $id = $_POST['service_id'];
+    
 
 
     

@@ -55,7 +55,9 @@ if(isset($_GET['delete_id'])){
 //================== update(edit) session end ==================
 
  if(isset($_POST['testimonial_update_btn'])){
+    
 
+    $id = $_POST['id'];
     $name = $_POST['name'];
     $sub_name = $_POST['sub_name'];
     $description = $_POST['description'];
@@ -71,18 +73,17 @@ if(isset($_GET['delete_id'])){
 
     
     if($name && $sub_name && $description){
-    
-        $testimonial_update_quary = "UPDATE testimonials SET name='$name',sub_name='$sub_name',description='$description'";
-    
-        mysqli_query($db_connect,$testimonial_update_quary);
-    
-        $_SESSION['testimonial_insert'] = 'Testimonial Insert Successfully';
-            header("location: testimonial_show.php");
-    }else{
-        $_SESSION['testimonial_error'] = 'Testimonial Insert Error,Please Input Field';
-            header("location: testimonial_edit.php");
-    }
+        $update_testimonial = "UPDATE testimonials SET name='$name', sub_name='$sub_name', description='$description' WHERE id='$id'";
 
+        mysqli_query($db_connect,$update_testimonial);
+
+        $_SESSION['portfolio_insert'] = 'Portfolio Insert Successfully';
+        header("location: testimonial_show.php");
+        
+    }else{
+        $_SESSION['portfolio_insert_error'] = 'Portfolio Insert Error';
+        header("location: testimonial_edit.php");
+    }
 
 
 }

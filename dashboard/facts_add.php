@@ -16,7 +16,7 @@ include('./icons.php');
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header jus">
                 <h3>Facts add</h3>
             </div>
             <div class="card-body">

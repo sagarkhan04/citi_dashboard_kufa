@@ -1,12 +1,14 @@
 <?php 
 
 include('./extends/header.php');
-
 include('../config/db.php');
 
 
 $select_portfolios = "SELECT * FROM  portfolios";
 $portfolios = mysqli_query($db_connect,$select_portfolios);
+
+// messege na thakle no data show korbe se jonno fetch_assoc
+$single_port = mysqli_fetch_assoc($portfolios);
 
 $serial = 0;
 
@@ -56,8 +58,9 @@ $serial = 0;
     </div>
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-between">
                 <h3>Portfolio List</h3>
+                <a href="portfolio_add.php" class="btn btn-primary">Add</a>
             </div>
             <div class="card-body" style="overflow-y: scroll;">
                 <table class="table table-striped">
@@ -73,6 +76,9 @@ $serial = 0;
                         </tr>
                     </thead>
                     <tbody>
+
+                        <!-- data na thake no data sms show korbe -->
+                        <?php if($single_port) : ?>
                         <?php foreach($portfolios as $portfolio) :?>
                         <tr>
                             <th scope="row"><?= ++$serial ?></th>
@@ -81,7 +87,10 @@ $serial = 0;
                             <td><?= $portfolio["title"]; ?></td>
                             <td><?= $portfolio["design_name"]; ?></td>
                             <td><?= $portfolio['description']; ?></td>
-                            <td><button class="btn btn-primary">active</button></td>
+                            <td>
+                                <a href="portfolio_post.php?port_id=<?= $portfolio['id'] ?>&status=<?= $portfolio['status']; ?>"
+                                    class="btn btn-<?= $portfolio['status'] == "deactivate" ? "danger" : "success"; ?>"><?= $portfolio['status']; ?></a>
+                            </td>
 
                             <td>
                                 <a href="portfolio_edit.php?edit_id=<?= $portfolio['id'] ?>"
@@ -92,7 +101,11 @@ $serial = 0;
                             </td>
                         </tr>
                         <?php endforeach;?>
-
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="6" class="text-center">No Data Found!</td>
+                        </tr>
+                        <?php endif;?>
                     </tbody>
                 </table>
             </div>

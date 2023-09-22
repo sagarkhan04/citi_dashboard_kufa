@@ -8,7 +8,7 @@ $id = $_GET['edit_id'];
 
 $select_quary = "SELECT * FROM portfolios WHERE id='$id'";
 $connect = mysqli_query($db_connect,$select_quary);
-$portfolio = mysqli_fetch_assoc($connect);
+$portfolio = mysqli_fetch_assoc($connect);  
 
 ?>
 
@@ -42,6 +42,7 @@ $portfolio = mysqli_fetch_assoc($connect);
             <div class="card-body">
 
                 <form class="row g-3" action="portfolio_post.php" method="POST" enctype="multipart/form-data">
+
 
                     <div class="col-md-6">
                         <label for="" class="form-label">Title</label>

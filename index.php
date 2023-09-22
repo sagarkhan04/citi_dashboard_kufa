@@ -5,15 +5,18 @@ include('./config/db.php');
 $users_select_query ="SELECT * FROM users_project_1";
 
 $users_connect = mysqli_query($db_connect,$users_select_query);
-
 $users = mysqli_fetch_assoc($users_connect);
+
+$select_service = "SELECT * FROM  services";
+$services = mysqli_query($db_connect,$select_service);
+
 
 $select_facts = "SELECT * FROM  facts";
 $facts = mysqli_query($db_connect,$select_facts);
 
 
 
-$select_portfolios = "SELECT * FROM  portfolios";
+$select_portfolios = "SELECT * FROM  portfolios WHERE status = 'activate'";
 $portfolios = mysqli_query($db_connect,$select_portfolios);
 
 
@@ -282,66 +285,18 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                     </div>
                 </div>
                 <div class="row">
+                    <?php foreach($services as $service) :?>
                     <div class="col-lg-4 col-md-6">
                         <div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.2s">
-                            <i class="fab fa-react"></i>
-                            <h3>UNLIMITED FEATURES</h3>
+                            <i class="<?= $service['icon']?>"></i>
+                            <h3><?= $service['title']?>"></h3>
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                indust.
+                                <?= $service['description']?>">
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.4s">
-                            <i class="fab fa-free-code-camp"></i>
-                            <h3>Unlimited Features</h3>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                indust.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.6s">
-                            <i class="fal fa-desktop"></i>
-                            <h3>Ultra Responsive</h3>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                indust.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.2s">
-                            <i class="fal fa-lightbulb-on"></i>
-                            <h3>Creative Ideas</h3>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                indust.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.4s">
-                            <i class="fal fa-edit"></i>
-                            <h3>Easy Customization</h3>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                indust.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.6s">
-                            <i class="fal fa-headset"></i>
-                            <h3>Supper Support</h3>
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                indust.
-                            </p>
-                        </div>
-                    </div>
+
+                    <?php endforeach;?>
                 </div>
             </div>
         </section>
@@ -498,7 +453,10 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                                     <li><i class="fas fa-map-marker"></i><span>Address :</span>Event Center park WT 22
                                         New York</li>
                                     <li><i class="fas fa-headphones"></i><span>Phone :</span>+9 125 645 8654</li>
-                                    <li><i class="fas fa-globe-asia"></i><span>e-mail :</span>info@exemple.com</li>
+                                    <a href="mailto:info@goodsmama.com">
+                                        <li><i class="fas fa-globe-asia"></i><span>e-mail
+                                                :</span>info@exemple.com</li>
+                                    </a>
                                 </ul>
                             </div>
                         </div>
@@ -507,7 +465,7 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                         <div class="contact-form">
                             <form action="#">
                                 <input type="text" placeholder="your name *">
-                                <input type="email" placeholder="your email *">
+                                <input type="email" placeholder="your email *" class="text-lowercase">
                                 <textarea name="message" id="message" placeholder="your message *"></textarea>
                                 <button class="btn">SEND</button>
                             </form>

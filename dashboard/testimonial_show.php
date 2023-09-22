@@ -7,6 +7,8 @@ include('../config/db.php');
 $select_testimonial = "SELECT * FROM testimonials";
 $testimonials = mysqli_query($db_connect,$select_testimonial);
 
+$single_port = mysqli_fetch_assoc($testimonials);
+
 
 $serial = 0;
 
@@ -56,8 +58,9 @@ $serial = 0;
     </div>
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-between">
                 <h3>Testimonial List</h3>
+                <a href="testimonial_add.php" class="btn btn-primary">Add</a>
             </div>
             <div class="card-body" style="overflow-y: scroll;">
                 <table class="table table-striped">
@@ -72,6 +75,8 @@ $serial = 0;
                         </tr>
                     </thead>
                     <tbody>
+
+                        <?php if($single_port) : ?>
                         <?php foreach($testimonials as $testimonial) :?>
                         <tr>
                             <th scope="row"><?= ++$serial ?></th>
@@ -92,6 +97,11 @@ $serial = 0;
                             </td>
                         </tr>
                         <?php endforeach;?>
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="6" class="text-center">No Data Found!</td>
+                        </tr>
+                        <?php endif;?>
                     </tbody>
                 </table>
             </div>
