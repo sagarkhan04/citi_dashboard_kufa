@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 19, 2023 at 12:04 PM
+-- Generation Time: Sep 24, 2023 at 02:06 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `project_creative`
+-- Database: `kufa`
 --
 
 -- --------------------------------------------------------
@@ -33,7 +33,7 @@ CREATE TABLE `portfolios` (
   `design_name` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `description` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `status` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'deactivate'
+  `status` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'activate'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -41,9 +41,12 @@ CREATE TABLE `portfolios` (
 --
 
 INSERT INTO `portfolios` (`id`, `title`, `design_name`, `description`, `image`, `status`) VALUES
-(10, 'Hashim Beck', 'Halla Cervantes', 'Macaulay Drake', '2023-09-19-34.png', 'deactivate'),
-(11, 'Penelope Carney', 'Mona Dyer', 'Nicole Gamble', '2023-09-19-11.png', 'deactivate'),
-(12, 'Jane Sampson', 'Briar Schultz', 'Sonya Dillon', '2023-09-19-34.jpg', 'deactivate');
+(18, 'Giselle Roy', 'Hayfa Weber', 'Samson Beck', '8d420fa35754d1f1c19969c88780314d.png', 'active'),
+(19, 'Keane Rivers', 'Leah Prince', 'Ezekiel David', '2023-09-22-10.jpg', 'active'),
+(20, 'Rigel Walls', 'Odette Hodges', 'Halee Copeland', '2023-09-22-30.png', 'active'),
+(21, 'Tanek Oliver', 'Jescie Frederick', 'Nina Singleton', '2023-09-22-52.png', 'active'),
+(22, 'Dahlia Robinson', 'Yetta Thornton', 'Oleg Gilbert', '2023-09-23-59.jpg', 'active'),
+(24, 'Lavinia Pollard', 'Joshua Cash', 'Deborah Hurst', '9f8785c7f9b578bec2c09e616568d270.png', 'active');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +66,7 @@ ALTER TABLE `portfolios`
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

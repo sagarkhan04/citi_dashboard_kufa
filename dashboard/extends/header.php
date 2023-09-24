@@ -150,6 +150,10 @@ if(!isset($_SESSION['admin_id'])){
                             </li>
                         </ul>
                     </li>
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'mail_show.php') ? 'active-page': '' ?>">
+                        <a href="mail_show.php" class="active"><i
+                                class="material-icons-two-tone">contact_mail</i>Mail</a>
+                    </li>
                 </ul>
             </div>
             <!--========================= sidebar-title end ==========================-->

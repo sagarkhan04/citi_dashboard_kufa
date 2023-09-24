@@ -14,9 +14,8 @@ $serial = 0;
 
 <div class="row">
     <div class="col">
-        <div class="page-description d-flex justify-content-between">
+        <div class="page-description">
             <h1>Fact Show</h1>
-            <a href="facts_add.php" class="btn btn-primary">Add</a>
         </div>
     </div>
     <div class="col-12">
@@ -59,8 +58,9 @@ $serial = 0;
     </div>
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-between">
                 <h3>Fact List</h3>
+                <a href="facts_add.php" class="btn btn-primary">Add</a>
             </div>
             <div class="card-body" style="overflow-y: scroll;">
                 <table class="table table-striped">

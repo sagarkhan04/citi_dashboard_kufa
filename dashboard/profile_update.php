@@ -14,7 +14,7 @@ if(isset($name_update_btn)){
     if($name){ 
         $user_id = $_SESSION['admin_id'];
         
-        $name_update_query = "UPDATE users_project_1 SET name='$name' WHERE id='$user_id'";
+        $name_update_query = "UPDATE users SET name='$name' WHERE id='$user_id'";
         mysqli_query($db_connect,$name_update_query);
         
         $_SESSION['admin_name'] = $name;
@@ -40,7 +40,7 @@ if(isset($password_update)){
 
     if($current_password){
         $encrypt = md5($current_password);
-        $select_password_query = "SELECT COUNT(*) AS password_check FROM users_project_1 WHERE id='$user_id' AND password='$encrypt'";
+        $select_password_query = "SELECT COUNT(*) AS password_check FROM users WHERE id='$user_id' AND password='$encrypt'";
 
         $select_password_query_connect = mysqli_query($db_connect,$select_password_query);
 
@@ -50,7 +50,7 @@ if(isset($password_update)){
             if($new_password){
                 if($new_password == $confirm_password){
                     $new_pass = md5($new_password);
-                    $update_query = "UPDATE users_project_1 SET password='$new_pass' WHERE id='$user_id'";
+                    $update_query = "UPDATE users SET password='$new_pass' WHERE id='$user_id'";
 
                     mysqli_query($db_connect,$update_query);
 
@@ -93,7 +93,7 @@ if(isset($image_update)){
     $path = "../images/profile/".$new_name;
     
     if(move_uploaded_file($image_temp_name,$path)){
-        $image_update = "UPDATE users_project_1 SET image='$new_name' WHERE id='$user_id'";
+        $image_update = "UPDATE users SET image='$new_name' WHERE id='$user_id'";
 
         mysqli_query($db_connect,$image_update);
         $_SESSION['admin_image'] = $new_name;

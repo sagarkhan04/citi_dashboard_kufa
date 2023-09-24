@@ -42,10 +42,7 @@ if (isset($_POST['insert_btn'])) {
     if(isset($_GET['delete_id'])){
         $id = $_GET['delete_id'];
     
-    
         $delete_portfolio_quary = "DELETE FROM portfolios WHERE id='$id'";
-    
-    
         mysqli_query($db_connect,$delete_portfolio_quary);
     
         $_SESSION['portfolio_delete'] = 'Portfolio Delete Successfully';
@@ -112,6 +109,8 @@ if (isset($_POST['insert_btn'])) {
   
     // }
         //================== update session end ==================
+
+        //================== update(edit) session ==================
         if (isset($_POST['update_btn'])) {
             $title = $_POST['title'];
             $portfolio_id = $_POST['portfolio_id'];
@@ -122,16 +121,17 @@ if (isset($_POST['insert_btn'])) {
             if ($title && $portfolio_id && $design_name && $description) {
                 $update_query = "UPDATE portfolios SET title='$title', design_name='$design_name', description='$description' WHERE id='$portfolio_id'";
                 mysqli_query($db_connect, $update_query);
-
+        //================== image update(edit) session ==================
                 if ($image["error"] == 0) {
                     $new_name = md5(rand(1000, 9000)) . "." . pathinfo($image["name"], PATHINFO_EXTENSION);
                     $tmp_name = $image["tmp_name"];
                     $path = "../images/portfolio/$new_name";
                     move_uploaded_file($tmp_name, $path);
-
+        //==================image unlink session  ==================
                     $image_query = "SELECT * FROM portfolios WHERE id = '$portfolio_id'";
                     $connect = mysqli_query($db_connect, $image_query);
                     $old_image = mysqli_fetch_assoc($connect)["image"];
+
                     unlink("../images/portfolio/$old_image");
 
                     $update_image_query = "UPDATE portfolios SET image='$new_name' WHERE id='$portfolio_id'";
@@ -143,14 +143,25 @@ if (isset($_POST['insert_btn'])) {
             }
         }
 
+if(isset($_GET['change_status'])){
 
-        if (isset($_GET['port_id']) && isset($_GET['status'])) {
-            $id = $_GET['port_id'];
-            $new_status = $_GET['status'] == "deactivate" ? "activate" : "deactivate";
-            $update_status = "UPDATE portfolios SET status = '$new_status' WHERE id = '$id'";
-            mysqli_query($db_connect, $update_status);
+    $id = $_GET['change_status'];
 
-            $_SESSION['portfolio_insert'] = 'Status update Successfully';
+    $select_portfolios = "SELECT * FROM portfolios WHERE id='$id'";
+    $connect = mysqli_query($db_connect,$select_portfolios);
+    $portfolios = mysqli_fetch_assoc($connect);
+   
+    if($portfolios['status'] == 'active') {
+      $update_query = "UPDATE portfolios SET status='deactive' WHERE id='$id'";
+        mysqli_query($db_connect,$update_query);
             header("location: portfolio_show.php");
-        }
+    }else{
+         $update_query = "UPDATE portfolios SET status='active' WHERE id='$id'";
+            mysqli_query($db_connect,$update_query);
+                header("location: portfolio_show.php");
+            }
+    
+
+}
+        
 ?>

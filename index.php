@@ -2,7 +2,7 @@
 
 include('./config/db.php');
 
-$users_select_query ="SELECT * FROM users_project_1";
+$users_select_query ="SELECT * FROM users";
 
 $users_connect = mysqli_query($db_connect,$users_select_query);
 $users = mysqli_fetch_assoc($users_connect);
@@ -16,7 +16,7 @@ $facts = mysqli_query($db_connect,$select_facts);
 
 
 
-$select_portfolios = "SELECT * FROM  portfolios WHERE status = 'activate'";
+$select_portfolios = "SELECT * FROM  portfolios WHERE status='active'";
 $portfolios = mysqli_query($db_connect,$select_portfolios);
 
 
@@ -463,11 +463,12 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                     </div>
                     <div class="col-lg-6">
                         <div class="contact-form">
-                            <form action="#">
-                                <input type="text" placeholder="your name *">
-                                <input type="email" placeholder="your email *" class="text-lowercase">
-                                <textarea name="message" id="message" placeholder="your message *"></textarea>
-                                <button class="btn">SEND</button>
+                            <form action="mail_post.php" method="POST">
+                                <input type="text" placeholder="your name *" name="name">
+                                <input type="email" placeholder="your email *" class="text-lowercase" name="email">
+                                <input type="text" placeholder="subject" class="text-lowercase" name="subject">
+                                <textarea id="message" placeholder="your message *" name="message"></textarea>
+                                <button type="submit" class="btn btn-secondary" name="mail_send_btn">SEND</button>
                             </form>
                         </div>
                     </div>

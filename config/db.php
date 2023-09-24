@@ -1,6 +1,6 @@
 <?php 
 
-$db_connect = mysqli_connect('localhost','root','','project_creative');
+$db_connect = mysqli_connect('localhost','root','','kufa');
 
 
 ?>

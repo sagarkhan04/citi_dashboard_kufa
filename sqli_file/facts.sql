@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 19, 2023 at 12:04 PM
+-- Generation Time: Sep 24, 2023 at 02:06 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `project_creative`
+-- Database: `kufa`
 --
 
 -- --------------------------------------------------------
@@ -39,7 +39,6 @@ CREATE TABLE `facts` (
 --
 
 INSERT INTO `facts` (`id`, `number`, `info_name`, `icon`) VALUES
-(1, '4000', 'Mona Stewart', 'fa fa-adjust'),
 (2, '3K', 'Keaton Preston', 'fab fa-aws'),
 (3, '345', 'MONA STEWART', 'fab fa-blogger'),
 (4, '381', 'Grady Orr', 'fab fa-adversal'),

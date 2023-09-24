@@ -48,13 +48,13 @@ if ($comfirm_password){
 
 if ($name && $email && $password && $comfirm_password){
 
-$email_validity = "SELECT COUNT(*) AS validity FROM users_project_1 WHERE email='$email'";
+$email_validity = "SELECT COUNT(*) AS validity FROM users WHERE email='$email'";
 $email_validity_connect = mysqli_query($db_connect,$email_validity);
 
 if(mysqli_fetch_assoc($email_validity_connect)['validity'] == 0){
     $encrypt_pass = md5 ($password); // password show na korar jonnno
     
-    $insert_query = "INSERT INTO users_project_1 (name,email,password) VALUES ('$name','$email','$encrypt_pass')";
+    $insert_query = "INSERT INTO users (name,email,password) VALUES ('$name','$email','$encrypt_pass')";
     mysqli_query($db_connect,$insert_query);
 
     // include('success.php');

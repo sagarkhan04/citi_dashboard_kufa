@@ -87,9 +87,20 @@ $serial = 0;
                             <td><?= $portfolio["title"]; ?></td>
                             <td><?= $portfolio["design_name"]; ?></td>
                             <td><?= $portfolio['description']; ?></td>
+
+                            <!--============== active status session ============-->
                             <td>
-                                <a href="portfolio_post.php?port_id=<?= $portfolio['id'] ?>&status=<?= $portfolio['status']; ?>"
-                                    class="btn btn-<?= $portfolio['status'] == "deactivate" ? "danger" : "success"; ?>"><?= $portfolio['status']; ?></a>
+                                <?php if($portfolio['status'] == 'active') :?>
+
+                                <a href="portfolio_post.php?change_status=<?=$portfolio['id']?>"
+                                    class="btn btn-success"><?= $portfolio['status']?></a>
+
+                                <?php else: ?>
+
+                                <a href="portfolio_post.php?change_status=<?=$portfolio['id']?>"
+                                    class="btn btn-danger"><?= $portfolio['status']?></a>
+
+                                <?php endif; ?>
                             </td>
 
                             <td>

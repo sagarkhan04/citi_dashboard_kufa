@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 20, 2023 at 03:47 PM
+-- Generation Time: Sep 24, 2023 at 02:06 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `project_creative`
+-- Database: `kufa`
 --
 
 -- --------------------------------------------------------
@@ -41,8 +41,9 @@ CREATE TABLE `testimonials` (
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `sub_name`, `description`, `image`, `status`) VALUES
-(14, 'Sagar Khan', 'Brett Wilson', 'কাশফুল নয়,\r\nমানিব্যাগে cash full থাকলেই বছরের ১২ মাসই শরৎকাল মনে হয়!😬', '2023-09-20-53.jpg', 'active'),
-(15, 'Sagar Khan', 'Brett Wilson', 'কাশফুল নয়,\r\nমানিব্যাগে cash full থাকলেই বছরের ১২ মাসই শরৎকাল মনে হয়!😬', '2023-09-20-47.png', 'active');
+(1, 'Sagar Khan', 'Bengali original', 'আমার সোনার বাংলা, আমি তোমায় ভালোবাসি।\r\n𝄆 চিরদিন তোমার আকাশ, 𝄇\r\nতোমার বাতাস, আমার প্রাণে\r\nও মা, আমার প্রাণে বাজায় বাঁশি॥\r\nসোনার বাংলা, আমি তোমায় ভালোবাসি।\r\nও মা, ফাগুনে তোর আমের বনে ঘ্রাণে পাগল করে,\r\nমরি হায়, হায় রে—\r\nও মা, ফাগুনে তোর আমের বনে ঘ্রাণে পাগল করে,\r\nও মা, অঘ্রাণে তোর ভরা ক্ষেতে কী দেখেছি\r\nআমি কী দেখেছি মধুর হাসি॥\r\nসোনার বাংলা, আমি তোমায় ভালোবাসি।', '2023-09-20-09.png', 'active'),
+(2, 'Sagar Khan', 'Romanisation of Bengali', 'Amar shonar Bangla, ami tomay bhalobashi.\r\n𝄆 Cirodin tomar akash, 𝄇\r\nTomar batash, amar prane\r\nO ma, amar prane bajay bãshi.\r\nShonar Bangla, ami tomay bhalobashi.\r\nO ma, phagune tor amer bone ghrane pagol kôre,\r\nMori hay, hay re:\r\nO ma, phagune tor amer bone ghrane pagol kôre,\r\nO ma, Ôghrane tor bhôra khete ki dekhechi\r\nAmi ki dekhechi modhur hashi.\r\nShonar Bangla, ami tomay bhalobashi.', '2023-09-20-21.png', 'active'),
+(3, 'Claudia Waters', 'Petra Morgan', 'আমার সোনার বাংলা, আমি তোমায় ভালোবাসি।\r\n𝄆 চিরদিন তোমার আকাশ, 𝄇', '2023-09-20-06.jpg', 'active');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +63,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

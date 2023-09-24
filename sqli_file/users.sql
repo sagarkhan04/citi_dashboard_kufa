@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 19, 2023 at 12:04 PM
+-- Generation Time: Sep 24, 2023 at 02:07 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -18,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `project_creative`
+-- Database: `kufa`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_project_1`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `users_project_1` (
+CREATE TABLE `users` (
   `id` int NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE `users_project_1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users_project_1`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users_project_1` (`id`, `name`, `email`, `image`, `password`) VALUES
+INSERT INTO `users` (`id`, `name`, `email`, `image`, `password`) VALUES
 (1, 'Admin', 'poryniqud@mailinator.com', '1-Admin-2023-09-17.png', '81dc9bdb52d04dc20036dbd8313ed055'),
 (2, 'qaviruv', 'nyfysalab@mailinator.com', 'default-img.jpg', 'f3ed11bbdb94fd9ebdefbaf646ab94d3'),
 (3, 'koroxekijy', 'wuxa@mailinator.com', 'default-img.jpg', 'f3ed11bbdb94fd9ebdefbaf646ab94d3');
@@ -49,9 +49,9 @@ INSERT INTO `users_project_1` (`id`, `name`, `email`, `image`, `password`) VALUE
 --
 
 --
--- Indexes for table `users_project_1`
+-- Indexes for table `users`
 --
-ALTER TABLE `users_project_1`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -59,9 +59,9 @@ ALTER TABLE `users_project_1`
 --
 
 --
--- AUTO_INCREMENT for table `users_project_1`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `users_project_1`
+ALTER TABLE `users`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
