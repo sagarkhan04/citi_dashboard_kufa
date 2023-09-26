@@ -58,7 +58,7 @@ $serial = 0;
                                 <!-- <a href="mail_edit.php?edit_id=<?= $mail['id'] ?>"
                                     class="btn btn-secondary btn-sm">Edit</a> -->
 
-                                <a href="mail_show.php?delete_id=<?= $mail['id'] ?>"
+                                <a href="mail_post.php?delete_id=<?= $mail['id'] ?>"
                                     class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>

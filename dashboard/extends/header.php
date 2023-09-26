@@ -86,9 +86,47 @@ if(!isset($_SESSION['admin_id'])){
                         <a href="profile.php" class="active"><i class="material-icons-two-tone">
                                 account_circle</i>Profile</a>
                     </li>
-                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'mailbox.php') ? 'active-page': '' ?>">
-                        <a href="#"><i class="material-icons-two-tone">inbox</i>Mailbox<span
-                                class="badge rounded-pill badge-danger float-end">87</span></a>
+
+                    <!--==================== about session ====================-->
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'about_post.php') ? 'active-page': '' ?>">
+                        <a href="about_post.php"><i class="material-icons-two-tone">feed</i>About<i
+                                class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="about_show.php">Abaout show</a>
+                            </li>
+                            <li>
+                                <a href="education_show.php">Education show</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--==================== mailbox session ====================-->
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'mail_show.php') ? 'active-page': '' ?>">
+                        <a href="mail_show.php" class="active"><i
+                                class="material-icons-two-tone">contact_mail</i>Mailbox<span
+                                class="badge rounded-pill badge-danger float-end">10</span></a>
+                    </li>
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'contact.php') ? 'active-page': '' ?>">
+                        <a href="contact.php" class="active"><i class="material-icons-two-tone">contacts</i>Contact</a>
+                    </li>
+
+                    <!--==================== social media session ====================-->
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'social_media_post.php') ? 'active-page': '' ?>">
+                        <a href="social_media_post.php"><i class="material-icons-two-tone">link</i>Social Media
+                            Contact<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="social_media_add.php">Social Media add</a>
+                            </li>
+                            <li>
+                                <a href="social_media_show.php">Social Media show</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <!--==================== service session ====================-->
@@ -149,10 +187,6 @@ if(!isset($_SESSION['admin_id'])){
                                 <a href="testimonial_show.php">Testimonial show</a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'mail_show.php') ? 'active-page': '' ?>">
-                        <a href="mail_show.php" class="active"><i
-                                class="material-icons-two-tone">contact_mail</i>Mail</a>
                     </li>
                 </ul>
             </div>
@@ -231,6 +265,10 @@ if(!isset($_SESSION['admin_id'])){
                         </div>
                         <div class="d-flex">
                             <ul class="navbar-nav">
+                                <li class="nav-item hidden-on-mobile">
+                                    <a class="btn btn-light" href="http://localhost/batch-2304/project/kufa/"
+                                        target=_blank;">KuFa view</a>
+                                </li>
                                 <li class="nav-item hidden-on-mobile">
                                     <a class="nav-link active" href="#">Applications</a>
                                 </li>

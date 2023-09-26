@@ -8,10 +8,10 @@ session_start();
  //================== post session ==================
 
 if (isset($_POST['insert_btn'])) {
-   
     $title = $_POST['title'];
     $design_name = $_POST['design_name'];
-    $description = $_POST['description'];
+    $description_short = $_POST['description_short'];
+    $description_long = $_POST['description_long'];
     
     $image = $_FILES['image']['name'];
     $image_temp_name = $_FILES['image']['tmp_name'];
@@ -23,7 +23,7 @@ if (isset($_POST['insert_btn'])) {
 
     if($title && $design_name && $description && $image){
         move_uploaded_file($image_temp_name, $path);
-        $insert_portfolio = "INSERT INTO portfolios (title,design_name,description,image) VALUES ('$title','$design_name','$description','$new_name')";
+        $insert_portfolio = "INSERT INTO portfolios (title,design_name,description_short,description_long,image) VALUES ('$title','$design_name','$description_short','$description_long','$new_name')";
             mysqli_query($db_connect,$insert_portfolio);
 
         $_SESSION['portfolio_insert'] = 'Portfolio Insert Successfully';
@@ -115,12 +115,13 @@ if (isset($_POST['insert_btn'])) {
             $title = $_POST['title'];
             $portfolio_id = $_POST['portfolio_id'];
             $design_name = $_POST['design_name'];
-            $description = $_POST['description'];
+            $description_short = $_POST['description_short'];
+            $description_long = $_POST['description_long'];
             $image = $_FILES['image'];
 
-            if ($title && $portfolio_id && $design_name && $description) {
-                $update_query = "UPDATE portfolios SET title='$title', design_name='$design_name', description='$description' WHERE id='$portfolio_id'";
-                mysqli_query($db_connect, $update_query);
+            if ($title && $portfolio_id && $design_name && $description_short && $description_long) {
+                $update_query = "UPDATE portfolios SET title='$title', design_name='$design_name', description_short='$description_short', description_long='$description_long' WHERE id='$portfolio_id'";
+                mysqli_query($db_connect,$update_query);
         //================== image update(edit) session ==================
                 if ($image["error"] == 0) {
                     $new_name = md5(rand(1000, 9000)) . "." . pathinfo($image["name"], PATHINFO_EXTENSION);

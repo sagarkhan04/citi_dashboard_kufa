@@ -1,6 +1,6 @@
 <?php 
 
-include('config/db.php');
+include('../config/db.php');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;

@@ -5,12 +5,12 @@ include('../config/db.php');
 
 
 
-$select_service = "SELECT * FROM  services";
-$services = mysqli_query($db_connect,$select_service);
+$select_social_media = "SELECT * FROM  social_medias";
+$medias = mysqli_query($db_connect,$select_social_media);
 
 // messege na thakle no data show korbe se jonno fetch_assoc
 
-$single_port = mysqli_fetch_assoc($services);  
+$single_port = mysqli_fetch_assoc($medias);  
 
 $serial = 0;
 
@@ -26,35 +26,35 @@ $serial = 0;
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-container">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Services</a></li>
+                <li class="breadcrumb-item"><a href="#">Social Media Contact</a></li>
 
             </ol>
         </nav>
     </div>
     <!--========================= success sms  ==========================-->
-    <?php if(isset($_SESSION['service_insert'])) : ?>
+    <?php if(isset($_SESSION['media_success'])) : ?>
     <div class="alert alert-custom" role="alert">
         <div class="custom-alert-icon icon-success"><i class="material-icons-outline">Done</i></div>
         <div class="alert-content">
             <span class="alert-title">Successfully</span>
-            <span class="alert-text"><?= ($_SESSION['service_insert']); ?></span>
+            <span class="alert-text"><?= ($_SESSION['media_success']); ?></span>
         </div>
 
     </div>
-    <?php endif; unset($_SESSION['service_insert']); ?>
+    <?php endif; unset($_SESSION['media_success']); ?>
     <!--========================= success sms end  ==========================-->
 
     <!--========================= Delete sms  ==========================-->
-    <?php if(isset($_SESSION['service_delete'])) : ?>
+    <?php if(isset($_SESSION['media_delete_success'])) : ?>
     <div class="alert alert-custom" role="alert">
         <div class="custom-alert-icon icon-success"><i class="material-icons-outline">Done</i></div>
         <div class="alert-content">
-            <span class="alert-title">Successfully</span>
-            <span class="alert-text"><?= ($_SESSION['service_delete']); ?></span>
+            <span class="alert-title">Sorry</span>
+            <span class="alert-text"><?= ($_SESSION['media_delete_success']); ?></span>
         </div>
 
     </div>
-    <?php endif; unset($_SESSION['service_delete']); ?>
+    <?php endif; unset($_SESSION['media_delete_success']); ?>
     <!--========================= Delete sms end  ==========================-->
     <div class="row">
         <div class="col-12">
@@ -65,7 +65,7 @@ $serial = 0;
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <h3>Service List</h3>
-                <a href="service_add.php" class="btn btn-primary">Add</a>
+                <a href="social_media_add.php" class="btn btn-primary">Add</a>
             </div>
             <div class="card-body" style="overflow-y: scroll;">
                 <table class="table table-striped">
@@ -74,40 +74,29 @@ $serial = 0;
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Icon</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Link</th>
                             <th scope="col">Action</th>
 
                         </tr>
                     </thead>
                     <tbody>
                         <?php if($single_port) :?>
-                        <?php foreach($services as $service) :?>
+                        <?php foreach($medias as $media) :?>
                         <tr>
                             <th scope="row"><?= ++$serial ?></th>
-                            <td><?= $service['icon'] ?></td>
-                            <td><?= $service['title'] ?></td>
-                            <td><textarea name="" id="" cols="60" rows="2"
-                                    disabled><?= $service['description'] ?></textarea></td>
-                            <!--========================= active status  ==========================-->
-                            <td>
-                                <?php if($service['status'] == 'active') :?>
-                                <button class="btn btn-success"><?= $service['status'] ?></button>
-                                <?php else: ?>
-                                <button class="btn btn-danger"><?= $service['status'] ?></button>
-                                <?php endif;?>
-                            </td>
-                            <!--========================= active status end ==========================-->
+                            <td><?= $media['icon'] ?></td>
+                            <td><?= $media['link'] ?></td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="service_edit.php?edit_id=<?= $service['id'] ?>"
+                                    <a href="social_media_edit.php?edit_id=<?= $media['id'] ?>"
                                         class="btn btn-secondary btn-sm">Edit</a>
 
-                                    <a href="service_post.php?delete_id=<?= $service['id'] ?>"
+                                    <a href="social_media_post.php?delete_id=<?= $media['id'] ?>"
                                         class="btn btn-danger btn-sm">Delete</a>
                                 </div>
                             </td>
+
+
                         </tr>
 
                         <!-- data na thakle no data sms massege dekhabe -->

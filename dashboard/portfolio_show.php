@@ -70,7 +70,8 @@ $serial = 0;
                             <th scope="col">Image</th>
                             <th scope="col">Title</th>
                             <th scope="col">Design Name</th>
-                            <th scope="col">Description</th>
+                            <th scope="col">Description Short</th>
+                            <th scope="col">Description long</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -85,8 +86,13 @@ $serial = 0;
                             <td><img src="../images/portfolio/<?= $portfolio['image']; ?>" alt="image"
                                     style="width:80px; height:60px;"></td>
                             <td><?= $portfolio["title"]; ?></td>
+
                             <td><?= $portfolio["design_name"]; ?></td>
-                            <td><?= $portfolio['description']; ?></td>
+
+                            <td><?= $portfolio['description_short']; ?></td>
+
+                            <td><textarea name="" id="" cols="30" rows="2"
+                                    disabled><?= $portfolio['description_long']; ?></textarea></td>
 
                             <!--============== active status session ============-->
                             <td>
@@ -104,11 +110,13 @@ $serial = 0;
                             </td>
 
                             <td>
-                                <a href="portfolio_edit.php?edit_id=<?= $portfolio['id'] ?>"
-                                    class="btn btn-secondary btn-sm">Edit</a>
+                                <div class="btn-group mt-3">
+                                    <a href="portfolio_edit.php?edit_id=<?= $portfolio['id'] ?>"
+                                        class="btn btn-secondary btn-sm">Edit</a>
 
-                                <a href="portfolio_post.php?delete_id=<?= $portfolio['id'] ?>"
-                                    class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="portfolio_post.php?delete_id=<?= $portfolio['id'] ?>"
+                                        class="btn btn-danger btn-sm">Delete</a>
+                                </div>
                             </td>
                         </tr>
                         <?php endforeach;?>

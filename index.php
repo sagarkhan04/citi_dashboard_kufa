@@ -3,7 +3,6 @@
 include('./config/db.php');
 
 $users_select_query ="SELECT * FROM users";
-
 $users_connect = mysqli_query($db_connect,$users_select_query);
 $users = mysqli_fetch_assoc($users_connect);
 
@@ -22,6 +21,26 @@ $portfolios = mysqli_query($db_connect,$select_portfolios);
 
 $select_testimonial = "SELECT * FROM testimonials";
 $testimonials = mysqli_query($db_connect,$select_testimonial);
+
+$contact_select = "SELECT * FROM contact";
+$contact_select_connect = mysqli_query($db_connect,$contact_select);
+$contact_data = mysqli_fetch_assoc($contact_select_connect);
+
+
+$social_media_select = "SELECT * FROM social_medias";
+$social_media_select_connect = mysqli_query($db_connect,$social_media_select);
+
+
+
+$select_about = "SELECT * FROM  abouts";
+$abouts = mysqli_query($db_connect,$select_about);
+$about = mysqli_fetch_assoc($abouts);
+
+
+
+$select_education = "SELECT * FROM  educations";
+$educations = mysqli_query($db_connect,$select_education);
+$education = mysqli_fetch_assoc($educations);
 
 
 ?>
@@ -94,6 +113,10 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                                         <li class="nav-item"><a class="nav-link" href="#service">service</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#portfolio">portfolio</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="http://localhost/batch-2304/project/kufa/dashboard/home.php"
+                                                target=_blank;>Dashboard
+                                                Login</a></li>
                                     </ul>
                                 </div>
                                 <div class="header-btn">
@@ -133,10 +156,14 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                 </div>
             </div>
             <div class="social-icon-right mt-20">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <?php foreach ($social_media_select_connect as $data): ?>
+                <a href="<?=$data["link"];?>"><i class="<?=$data["icon"];?>"></i></a>
+                <?php endforeach; ?>
+                <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a> -->
             </div>
         </div>
         <div class="offcanvas-overly"></div>
@@ -156,17 +183,18 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                             <h6 class="wow fadeInUp" data-wow-delay="0.2s">HELLO!</h6>
                             <h2 class="wow fadeInUp" data-wow-delay="0.4s">I am <?= $users['name'] ?>
                             </h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.6s">I'm Will Smith, professional web developer
-                                with long time experience in this field​.</p>
+                            <p class="wow fadeInUp" data-wow-delay="0.6s"><?= $about['top_about']?></p>
                             <div class="banner-social wow fadeInUp" data-wow-delay="0.8s">
                                 <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <?php foreach ($social_media_select_connect as $data): ?>
+                                    <li><a href="<?=$data["link"];?>"><i class="<?=$data["icon"];?>"></i></a></li>
+                                    <?php endforeach; ?>
+                                    <!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                                     <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li> -->
                                 </ul>
                             </div>
-                            <a href="#" class="btn wow fadeInUp" data-wow-delay="1s">SEE PORTFOLIOS</a>
+                            <a href="#portfolio" class="btn wow fadeInUp" data-wow-delay="1s">SEE PORTFOLIOS</a>
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-6 d-none d-lg-block">
@@ -196,19 +224,15 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                             <h2>About Me</h2>
                         </div>
                         <div class="about-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit
-                                deserunt, quas
-                                quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam
-                                asperiores maxime
-                                blanditiis culpa vitae velit. Numquam!</p>
+                            <p><?= $about['bottom_about']?></p>
                             <h3>Education:</h3>
                         </div>
                         <!-- Education Item -->
                         <div class="education">
-                            <div class="year">2020</div>
+                            <div class="year"><?= $education['year']?></div>
                             <div class="line"></div>
                             <div class="location">
-                                <span>PHD of Interaction Design &amp; Animation</span>
+                                <span><?= $education['subject']?></span>
                                 <div class="progressWrapper">
                                     <div class="progress">
                                         <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s"
@@ -289,7 +313,7 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                     <div class="col-lg-4 col-md-6">
                         <div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.2s">
                             <i class="<?= $service['icon']?>"></i>
-                            <h3><?= $service['title']?>"></h3>
+                            <h3><?= $service['title']?></h3>
                             <p>
                                 <?= $service['description']?>">
                             </p>
@@ -322,9 +346,10 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                             </div>
                             <div class="speaker-overlay">
                                 <span><?= $portfolio['title']?></span>
-                                <h4><a href="portfolio-single.html"><?= $portfolio['design_name']?></a></h4>
-                                <a href="portfolio-single.html"
-                                    class="arrow-btn"><?= $portfolio['description']?><span></span></a>
+                                <h4><a href="single.php?id=<?= $portfolio['id']?>"><?= $portfolio['design_name']?></a>
+                                </h4>
+                                <a href="single.php?id=<?= $portfolio['id']?>"
+                                    class="arrow-btn"><?= $portfolio['description_short']?><span></span></a>
                             </div>
                         </div>
                     </div>
@@ -450,20 +475,23 @@ $testimonials = mysqli_query($db_connect,$select_testimonial);
                             <h5>OFFICE IN <span>NEW YORK</span></h5>
                             <div class="contact-list">
                                 <ul>
-                                    <li><i class="fas fa-map-marker"></i><span>Address :</span>Event Center park WT 22
-                                        New York</li>
-                                    <li><i class="fas fa-headphones"></i><span>Phone :</span>+9 125 645 8654</li>
-                                    <a href="mailto:info@goodsmama.com">
-                                        <li><i class="fas fa-globe-asia"></i><span>e-mail
-                                                :</span>info@exemple.com</li>
-                                    </a>
+                                    <li><i class="fas fa-map-marker"></i><span>Address
+                                            :</span><?=$contact_data["address"];?></li>
+                                    <li><i class="fas fa-headphones"></i><span>Phone
+                                            :</span><?=$contact_data["phone"];?></li>
+
+                                    <li><i class="fas fa-globe-asia"></i><span>e-mail
+                                            :</span><a
+                                            href="mailto:<?=$contact_data["email"];?>"><?=$contact_data["email"];?></a>
+                                    </li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="contact-form">
-                            <form action="mail_post.php" method="POST">
+                            <form action="dashboard/mail_post.php" method="POST">
                                 <input type="text" placeholder="your name *" name="name">
                                 <input type="email" placeholder="your email *" class="text-lowercase" name="email">
                                 <input type="text" placeholder="subject" class="text-lowercase" name="subject">

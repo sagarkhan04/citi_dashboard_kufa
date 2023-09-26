@@ -10,6 +10,9 @@ $select_quary = "SELECT * FROM portfolios WHERE id='$id'";
 $connect = mysqli_query($db_connect,$select_quary);
 $portfolio = mysqli_fetch_assoc($connect);  
 
+
+
+
 ?>
 
 
@@ -59,9 +62,15 @@ $portfolio = mysqli_fetch_assoc($connect);
 
                     </div>
                     <div class="col-md-7">
-                        <label for="" class="form-label">Description</label>
-                        <input type="text" class="form-control" placeholder="Description..." name="description"
-                            value="<?= $portfolio['description'] ?>">
+                        <label for="" class="form-label">Description Short</label>
+                        <input type="text" class="form-control" placeholder="Description..." name="description_short"
+                            value="<?= $portfolio['description_short'] ?>">
+
+                    </div>
+                    <div class="col-md-7">
+                        <label for="" class="form-label">Description Long</label>
+                        <input type="text" class="form-control" placeholder="Description..." name="description_long"
+                            value="<?= $portfolio['description_long'] ?>">
 
                     </div>
                     <div>

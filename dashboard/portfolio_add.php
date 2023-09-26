@@ -47,8 +47,13 @@ include('./extends/header.php');
 
                     </div>
                     <div class="col-md-7">
-                        <label for="" class="form-label">Description</label>
-                        <input type="text" class="form-control" placeholder="Description..." name="description">
+                        <label for="" class="form-label">Description Short</label>
+                        <input type="text" class="form-control" placeholder="Description..." name="description_short">
+
+                    </div>
+                    <div class="col-md-7">
+                        <label for="" class="form-label">Description Long</label>
+                        <input type="text" class="form-control" placeholder="Description..." name="description_long">
 
                     </div>
                     <div class="col-md-7">
