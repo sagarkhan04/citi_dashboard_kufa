@@ -24,7 +24,7 @@ $education =mysqli_fetch_assoc($educations);
 </div>
 
 <div class="row">
-    <div class="col-12">
+    <div class="col-6">
         <div class="card">
             <div class="card-header">
                 <h3>About</h3>
@@ -50,6 +50,31 @@ $education =mysqli_fetch_assoc($educations);
             </div>
         </div>
     </div>
+    <div class="col-6">
+
+        <div class="card">
+            <div class="card-header">
+                <h2>About Image</h2>
+            </div>
+            <div class="card-body">
+                <form action="profile_update.php" method="POST" enctype="multipart/form-data">
+
+                    <!--=================== image update ===================================-->
+                    <img src="../images/profile/1-Admin-2023-09-15.jpg" alt="about_image"
+                        style="border-radius: 50%; width:100px; height:100px;"><br>
+                    <label for="exampleInputEmail1" class="form-label">image</label>
+                    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        name="image">
+                    <!--=================== image update end  ===================================-->
+
+
+                    <!--=================== input confirm Password ===================================-->
+                    <button class="btn btn-primary mt-4" name="image_update">About Image update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 

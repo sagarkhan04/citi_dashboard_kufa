@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 26, 2023 at 02:51 PM
+-- Generation Time: Sep 27, 2023 at 05:45 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -74,15 +74,18 @@ INSERT INTO `contact` (`id`, `facebook`, `twitter`, `instagram`, `linkedin`, `gi
 CREATE TABLE `educations` (
   `id` int NOT NULL,
   `year` varchar(4) COLLATE utf8mb4_general_ci NOT NULL,
-  `subject` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
+  `subject` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `progress` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `educations`
 --
 
-INSERT INTO `educations` (`id`, `year`, `subject`) VALUES
-(1, '2020', 'PHD of Interaction Design &amp; Animation');
+INSERT INTO `educations` (`id`, `year`, `subject`, `progress`) VALUES
+(1, '2020', 'PHD of Interaction Design &amp; Animation', 100),
+(2, '2015', 'Iona Graves', 1982),
+(7, '2015', 'Iona Graves bangladesh', 20);
 
 -- --------------------------------------------------------
 
@@ -102,8 +105,6 @@ CREATE TABLE `facts` (
 --
 
 INSERT INTO `facts` (`id`, `number`, `info_name`, `icon`) VALUES
-(2, '3K', 'Keaton Preston', 'fab fa-aws'),
-(3, '345', 'MONA STEWART', 'fab fa-blogger'),
 (4, '381', 'Grady Orr', 'fab fa-adversal'),
 (6, '733', 'Prescott Pace', 'fab fa-btc'),
 (7, '550', 'Cullen Cooke', 'fab fa-angrycreative');
@@ -250,9 +251,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `image`, `password`) VALUES
-(1, 'Admin', 'poryniqud@mailinator.com', '1-Admin-2023-09-17.png', '81dc9bdb52d04dc20036dbd8313ed055'),
-(2, 'qaviruv', 'nyfysalab@mailinator.com', 'default-img.jpg', 'f3ed11bbdb94fd9ebdefbaf646ab94d3'),
-(3, 'koroxekijy', 'wuxa@mailinator.com', 'default-img.jpg', 'f3ed11bbdb94fd9ebdefbaf646ab94d3');
+(4, 'Sagar Khan', 'sagar.cmt1920@gmail.com', '4-Sagar Khan-2023-09-27.png', '81dc9bdb52d04dc20036dbd8313ed055');
 
 --
 -- Indexes for dumped tables
@@ -338,7 +337,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `educations`
 --
 ALTER TABLE `educations`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `facts`
@@ -380,7 +379,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

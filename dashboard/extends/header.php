@@ -89,12 +89,18 @@ if(!isset($_SESSION['admin_id'])){
 
                     <!--==================== about session ====================-->
 
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'about_show.php') ? 'active-page': '' ?>">
+                        <a href="about_show.php"><i class="material-icons-two-tone">feed</i>About</a>
+
+                    </li>
+                    <!--==================== education session ====================-->
+
                     <li class="<?= (basename($_SERVER['PHP_SELF']) == 'about_post.php') ? 'active-page': '' ?>">
-                        <a href="about_post.php"><i class="material-icons-two-tone">feed</i>About<i
+                        <a href="about_post.php"><i class="material-icons-two-tone">school</i>Education<i
                                 class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="about_show.php">Abaout show</a>
+                                <a href="education_add.php">Education add</a>
                             </li>
                             <li>
                                 <a href="education_show.php">Education show</a>

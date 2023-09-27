@@ -1,52 +1,130 @@
 <?php 
 
 include('./extends/header.php');
-
 include('../config/db.php');
+
 
 $select_education = "SELECT * FROM  educations";
 $educations = mysqli_query($db_connect,$select_education);
-$education =mysqli_fetch_assoc($educations);
+
+// messege na thakle no data show korbe se jonno fetch_assoc
+
+$single_port = mysqli_fetch_assoc($educations);  
+
+$serial = 0;
 
 ?>
 
 <div class="row">
     <div class="col">
         <div class="page-description">
-            <h1>Information</h1>
+            <h1>Education Show</h1>
         </div>
     </div>
-</div>
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Education</a></li>
 
-<div class="row">
+            </ol>
+        </nav>
+    </div>
+    <!--========================= success sms  ==========================-->
+    <?php if(isset($_SESSION['education_success'])) : ?>
+    <div class="alert alert-custom" role="alert">
+        <div class="custom-alert-icon icon-success"><i class="material-icons-outline">Done</i></div>
+        <div class="alert-content">
+            <span class="alert-title">Successfully</span>
+            <span class="alert-text"><?= ($_SESSION['education_success']); ?></span>
+        </div>
+
+    </div>
+    <?php endif; unset($_SESSION['education_success']); ?>
+    <!--========================= success sms end  ==========================-->
+    <!--========================= success sms  ==========================-->
+    <?php if(isset($_SESSION['education_update_success'])) : ?>
+    <div class="alert alert-custom" role="alert">
+        <div class="custom-alert-icon icon-success"><i class="material-icons-outline">Done</i></div>
+        <div class="alert-content">
+            <span class="alert-title">Successfully</span>
+            <span class="alert-text"><?= ($_SESSION['education_update_success']); ?></span>
+        </div>
+
+    </div>
+    <?php endif; unset($_SESSION['education_update_success']); ?>
+    <!--========================= success sms end  ==========================-->
+
+    <!--========================= Delete sms  ==========================-->
+    <?php if(isset($_SESSION['education_delete'])) : ?>
+    <div class="alert alert-custom" role="alert">
+        <div class="custom-alert-icon icon-success"><i class="material-icons-outline">Done</i></div>
+        <div class="alert-content">
+            <span class="alert-title">Successfully</span>
+            <span class="alert-text"><?= ($_SESSION['education_delete']); ?></span>
+        </div>
+
+    </div>
+    <?php endif; unset($_SESSION['education_delete']); ?>
+    <!--========================= Delete sms end  ==========================-->
+    <div class="row">
+        <div class="col-12">
+
+        </div>
+    </div>
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
-                <h3>Education</h3>
+            <div class="card-header d-flex justify-content-between">
+                <h3>Education List</h3>
+                <a href="education_add.php" class="btn btn-primary">Add</a>
             </div>
-            <div class="card-body">
+            <div class="card-body" style="overflow-y: scroll;">
+                <table class="table table-striped">
+                    <thead class="table-dark">
 
-                <form class="row g-3" action="about_edu_post.php" method="POST">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Progress</th>
+                            <th scope="col">Action</th>
 
-                    <div class="col-md-12">
-                        <label for="" class="form-label">Years</label>
-                        <input type="number" class="form-control" placeholder="" name=""
-                            value="<?= $education['year']?>">
-                    </div>
-                    <div class="col-md-12">
-                        <label for="" class="form-label">Subject Name</label>
-                        <input type="text" class="form-control" placeholder="" name=""
-                            value="<?= $education['subject']?>">
-                    </div>
-                    <div class=" col-6">
-                        <button type="submit" class="btn btn-primary" name="edu_btn">Education Insert</button>
-                    </div>
-                </form>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if($single_port) :?>
+                        <?php foreach($educations as $education) :?>
+                        <tr>
+                            <th scope="row"><?= ++$serial ?></th>
+                            <td><?= $education['year'] ?></td>
+                            <td><?= $education['subject'] ?></td>
+                            <td><?= $education['progress'] ?></td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="education_edit.php?edit_id=<?= $education['id'] ?>"
+                                        class="btn btn-secondary btn-sm">Edit</a>
+
+                                    <a href="education_post.php?delete_id=<?= $education['id'] ?>"
+                                        class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            </td>
+
+
+                        </tr>
+
+                        <!-- data na thakle no data sms massege dekhabe -->
+                        <?php endforeach; ?>
+                        <?php else :?>
+                        <tr>
+                            <td colspan="6" class="text-center">No Data Found!</td>
+                        </tr>
+                        <?php endif;?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
-
 
 
 
