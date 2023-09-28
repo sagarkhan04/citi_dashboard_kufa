@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 27, 2023 at 05:45 PM
+-- Generation Time: Sep 28, 2023 at 05:22 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -30,15 +30,28 @@ SET time_zone = "+00:00";
 CREATE TABLE `abouts` (
   `id` int NOT NULL,
   `top_about` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `bottom_about` longtext COLLATE utf8mb4_general_ci NOT NULL
+  `bottom_about` longtext COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(200) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `abouts`
 --
 
-INSERT INTO `abouts` (`id`, `top_about`, `bottom_about`) VALUES
-(1, 'I\'m Will Smith, professional web developer with long time experience in this field​.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit deserunt, quas quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam asperiores maxime blanditiis culpa vitae velit. Numquam!');
+INSERT INTO `abouts` (`id`, `top_about`, `bottom_about`, `image`) VALUES
+(1, 'I\'m Will Smith, professional web developer with long time experience in this field​.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit deserunt, quas quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam asperiores maxime blanditiis culpa vitae velit. Numquam!', 'default.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `brands`
+--
+
+CREATE TABLE `brands` (
+  `id` int NOT NULL,
+  `brand_name` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `image` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -264,6 +277,12 @@ ALTER TABLE `abouts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `brands`
+--
+ALTER TABLE `brands`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `contact`
 --
 ALTER TABLE `contact`
@@ -326,6 +345,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `abouts`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `brands`
+--
+ALTER TABLE `brands`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `contact`
