@@ -12,13 +12,12 @@
                     </div>
                 </div>
             </div>
-            <!-- content -->
+            <h1>Alhamdulillah</h1>
         </div>
     </div>
 </div>
 </div>
 
 <?php 
-    include("./extends/footer.php"); 
-
+    include("./extends/footer.php");
 ?>

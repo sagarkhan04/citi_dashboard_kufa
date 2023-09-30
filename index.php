@@ -101,10 +101,6 @@
                                         <li class="nav-item"><a class="nav-link" href="#service">service</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#portfolio">portfolio</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                href="http://localhost/batch-2304/project/kufa/dashboard/home.php"
-                                                target=_blank;>Dashboard
-                                                Login</a></li>
                                     </ul>
                                 </div>
                                 <div class="header-btn">
@@ -145,7 +141,7 @@
             <div class="social-icon-right mt-20">
 
                 <?php foreach ($social_media_select_connect as $data): ?>
-                <a href="<?=$data["link"];?>"><i class="<?=$data["icon"];?>"></i></a>
+                <a href="<?=$data["link"];?>" target="_blank"><i class="<?=$data["icon"];?>"></i></a>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -170,7 +166,8 @@
                             <div class="banner-social wow fadeInUp" data-wow-delay="0.8s">
                                 <ul>
                                     <?php foreach ($social_media_select_connect as $data): ?>
-                                    <li><a href="<?=$data["link"];?>"><i class="<?=$data["icon"];?>"></i></a></li>
+                                    <li><a href="<?=$data["link"];?>" target="_blank"><i
+                                                class="<?=$data["icon"];?>"></i></a></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -384,8 +381,7 @@
                             <h2>Contact Information</h2>
                         </div>
                         <div class="contact-content">
-                            <p>Event definition is - somthing that happens occurre How evesnt sentence. Synonym when an
-                                unknown printer took a galley.</p>
+                            <p><?= $about['footer_about']?></p>
                             <h5>OFFICE IN <span>Bangladesh</span></h5>
                             <div class="contact-list">
                                 <ul>
@@ -394,7 +390,7 @@
                                     <li><i class="fas fa-headphones"></i><span>Phone
                                             :</span><?=$contact_data["phone"];?></li>
 
-                                    <li><i class="fas fa-globe-asia"></i><span>e-mail
+                                    <li><i class="fas fa-globe-asia"></i><span>E-mail
                                             :</span><a
                                             href="mailto:<?=$contact_data["email"];?>"><?=$contact_data["email"];?></a>
                                     </li>
@@ -429,7 +425,7 @@
                 <div class="row align-items-center">
                     <div class="col-12">
                         <div class="copyright-text text-center">
-                            <p>Copyright© <span>Kufa</span> | All Rights Reserved</p>
+                            <p>Copyright© <span><a href="index.php">Kufa</a></span> | All Rights Reserved</p>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 30, 2023 at 06:34 AM
+-- Generation Time: Sep 30, 2023 at 02:43 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -31,6 +31,7 @@ CREATE TABLE `abouts` (
   `id` int NOT NULL,
   `top_about` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `bottom_about` longtext COLLATE utf8mb4_general_ci NOT NULL,
+  `footer_about` longtext COLLATE utf8mb4_general_ci NOT NULL,
   `image` varchar(200) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -38,8 +39,8 @@ CREATE TABLE `abouts` (
 -- Dumping data for table `abouts`
 --
 
-INSERT INTO `abouts` (`id`, `top_about`, `bottom_about`, `image`) VALUES
-(1, 'I\'m Will Sagar Khan, professional web developer with long time experience in this field​.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit deserunt, quas quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam asperiores maxime blanditiis culpa vitae velit. Numquam!', '4-Sagar Khan-2023-09-29.png');
+INSERT INTO `abouts` (`id`, `top_about`, `bottom_about`, `footer_about`, `image`) VALUES
+(1, 'I\'m Will Sagar Khan, professional web developer with long time experience in this field​.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit deserunt, quas quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam asperiores maxime blanditiis culpa vitae velit. Numquam!', 'Event definition is - somthing that happens occurre How evesnt sentence. Synonym when an unknown printer took a galley.', '4-Sagar Khan-2023-09-29.png');
 
 -- --------------------------------------------------------
 
@@ -160,7 +161,8 @@ CREATE TABLE `mails` (
 INSERT INTO `mails` (`id`, `name`, `email`, `subject`, `message`) VALUES
 (2, 'Mark Harding', 'sagar.cmt4059459rpi@gmail.com', 'Consequatur Vel vol', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
 (3, 'Palmer Ortega', 'mdsagor1769133@gmail.com', 'Omnis inventore fugi', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
-(4, 'Sagar Khan', 'sagor1769133@gmail.com', 'Subject Name', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.');
+(4, 'Sagar Khan', 'sagor1769133@gmail.com', 'Subject Name', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
+(6, 'Sagar Khan', 'sagar.cmt4059459rpi@gmail.com', 'computer technologu', 'Vehicula dolor amet consectetur adipiscing elit. Crassollicitudin,tellus vitae condimem egestliberos dolor auctor tellus.');
 
 -- --------------------------------------------------------
 
@@ -239,7 +241,7 @@ INSERT INTO `social_medias` (`id`, `icon`, `link`) VALUES
 (9, 'fab fa-twitter', 'https://twitter.com/sagarkhan04'),
 (10, 'fab fa-github', 'https://github.com/sagarkhan04'),
 (11, 'fab fa-codepen', 'https://codepen.io/Sagar-khan'),
-(14, 'fab fa-whatsapp', 'phone=8801643161999&text=Hi%2C%20how%20can%20I%20help%20you%3F');
+(22, 'fab fa-whatsapp', 'https://api.whatsapp.com/send?phone=8801643161999&text=Hi%2C%20how%20can%20I%20help%20you%3F');
 
 -- --------------------------------------------------------
 
@@ -394,7 +396,7 @@ ALTER TABLE `facts`
 -- AUTO_INCREMENT for table `mails`
 --
 ALTER TABLE `mails`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `portfolios`
@@ -412,7 +414,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `social_medias`
 --
 ALTER TABLE `social_medias`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `testimonials`

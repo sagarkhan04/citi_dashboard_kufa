@@ -51,11 +51,17 @@ if(!isset($_SESSION['admin_id'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <Style>
+    .app-menu {
+        padding-bottom: 200px important;
+    }
+    </Style>
 </head>
 
 <body>
     <div class="app align-content-stretch d-flex flex-wrap">
-        <div class="app-sidebar" style="overflow-y: scroll;">
+        <div class="app-sidebar">
             <div class="logo">
                 <a href="index.html" class="logo-icon"><span class="logo-text">Neptune</span></a>
                 <div class="sidebar-user-switcher user-activity-online">
@@ -74,7 +80,7 @@ if(!isset($_SESSION['admin_id'])){
             </div>
 
             <!--========================= sidebar-title ==========================-->
-            <div class="app-menu">
+            <div class="app-menu" style="padding-bottom: 300px;">
                 <ul class="accordion-menu">
                     <li class="sidebar-title">
                         Apps
@@ -116,10 +122,6 @@ if(!isset($_SESSION['admin_id'])){
                                 class="badge rounded-pill badge-danger float-end">10</span></a>
                     </li>
 
-                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'contact.php') ? 'active-page': '' ?>">
-                        <a href="contact.php" class="active"><i class="material-icons-two-tone">contacts</i>Contact</a>
-                    </li>
-
                     <!--==================== social media session ====================-->
 
                     <li class="<?= (basename($_SERVER['PHP_SELF']) == 'social_media_post.php') ? 'active-page': '' ?>">
@@ -131,6 +133,9 @@ if(!isset($_SESSION['admin_id'])){
                             </li>
                             <li>
                                 <a href="social_media_show.php">Social Media show</a>
+                            </li>
+                            <li>
+                                <a href="contact.php">Contact</a>
                             </li>
                         </ul>
                     </li>

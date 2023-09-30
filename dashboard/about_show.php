@@ -63,6 +63,11 @@
                         <input type="text" class="form-control" placeholder="" name="bottom_about"
                             value="<?= $about['bottom_about']?>">
                     </div>
+                    <div class="col-md-12">
+                        <label for="" class="form-label">About Footer</label>
+                        <input type="text" class="form-control" placeholder="" name="footer_about"
+                            value="<?= $about['footer_about']?>">
+                    </div>
                     <div class="col-6">
                         <button type="submit" class="btn btn-primary" name="about_btn">About Update</button>
                     </div>

@@ -44,12 +44,12 @@
 
                     </div>
                     <div class="col-md-7">
-                        <label for="" class="form-label">Description Short</label>
+                        <label for="" class="form-label">Description Short (home page)</label>
                         <input type="text" class="form-control" placeholder="Description..." name="description_short">
 
                     </div>
                     <div class="col-md-7">
-                        <label for="" class="form-label">Description Long</label>
+                        <label for="" class="form-label">Description Long (single page)</label>
                         <input type="text" class="form-control" placeholder="Description..." name="description_long">
 
                     </div>
