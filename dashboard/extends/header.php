@@ -25,7 +25,7 @@ if(!isset($_SESSION['admin_id'])){
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Neptune - Responsive Admin Dashboard Template</title>
+    <title>Kufa | Admin Dashboard</title>
 
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -150,21 +150,6 @@ if(!isset($_SESSION['admin_id'])){
                         </ul>
                     </li>
 
-                    <!--==================== facts session ====================-->
-
-                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'facts_post.php') ? 'active-page': '' ?>">
-                        <a href="facts_show.php"><i class="material-icons-two-tone">info</i>Facts<i
-                                class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="facts_add.php">Fact add</a>
-                            </li>
-                            <li>
-                                <a href="facts_show.php">Fact show</a>
-                            </li>
-                        </ul>
-                    </li>
-
                     <!--==================== portfolio session ====================-->
 
                     <li class="<?= (basename($_SERVER['PHP_SELF']) == 'portfolio_post.php') ? 'active-page': '' ?>">
@@ -180,6 +165,22 @@ if(!isset($_SESSION['admin_id'])){
                         </ul>
                     </li>
 
+
+                    <!--==================== facts session ====================-->
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'facts_post.php') ? 'active-page': '' ?>">
+                        <a href="facts_show.php"><i class="material-icons-two-tone">info</i>Facts<i
+                                class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="facts_add.php">Fact add</a>
+                            </li>
+                            <li>
+                                <a href="facts_show.php">Fact show</a>
+                            </li>
+                        </ul>
+                    </li>
+
                     <!--==================== testimonial session ====================-->
 
                     <li class="<?= (basename($_SERVER['PHP_SELF']) == 'testimonial_post.php') ? 'active-page': '' ?>">
@@ -191,6 +192,20 @@ if(!isset($_SESSION['admin_id'])){
                             </li>
                             <li>
                                 <a href="testimonial_show.php">Testimonial show</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--==================== brand session ====================-->
+
+                    <li class="<?= (basename($_SERVER['PHP_SELF']) == 'brand_post.php') ? 'active-page': '' ?>">
+                        <a href="brand_post.php"><i class="material-icons-two-tone">branding_watermark</i>Brand<i
+                                class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="brand_add.php">Brand add</a>
+                            </li>
+                            <li>
+                                <a href="brand_show.php">Brand show</a>
                             </li>
                         </ul>
                     </li>

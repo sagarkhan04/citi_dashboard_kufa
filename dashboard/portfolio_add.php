@@ -1,10 +1,7 @@
 <?php 
-
-
-include('./extends/header.php');
+    include('./extends/header.php');
 
 ?>
-
 
 <div class="row">
     <div class="col">
@@ -71,19 +68,9 @@ include('./extends/header.php');
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
 <?php 
 
-
-include('./extends/footer.php')
+    include('./extends/footer.php')
 
 
 ?>

@@ -1,7 +1,5 @@
 <?php 
-
-include('./extends/header.php');
-
+    include('./extends/header.php');
 
 ?>
 
@@ -63,10 +61,6 @@ include('./extends/header.php');
 </div>
 
 
-
-
 <?php 
-
-include('./extends/footer.php')
-
+    include('./extends/footer.php')
 ?>

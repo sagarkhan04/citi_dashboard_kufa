@@ -1,7 +1,6 @@
 <?php 
-
-include('./extends/header.php');
-include('./icons.php');
+    include('./extends/header.php');
+    include('./icons.php');
 
 ?>
 
@@ -54,7 +53,7 @@ include('./icons.php');
 
                     <div class="col-md-6 ">
                         <label for="inputEmail4" class="form-label">Number</label>
-                        <input type="text" class="form-control" name="number">
+                        <input type="number" class="form-control" name="number">
                     </div>
 
                     <div class="col-md-6">
@@ -87,9 +86,7 @@ include('./icons.php');
                     }
                     </script>
 
-                    <!--=================== icon input ===================-->
-
-
+                    <!--=================== icon input end ===================-->
 
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary" name="facts_btn">Fact Insert</button>
@@ -101,10 +98,8 @@ include('./icons.php');
 </div>
 
 
-
-
 <?php 
 
-include('./extends/footer.php')
+    include('./extends/footer.php')
 
 ?>

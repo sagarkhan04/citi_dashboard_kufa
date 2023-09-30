@@ -97,9 +97,7 @@ $service = mysqli_fetch_assoc($connect);
                     }
                     </script>
 
-                    <!--=================== icon input ===================-->
-
-
+                    <!--=================== icon input end===================-->
 
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary" name="edit_btn">Update</button>
@@ -109,9 +107,6 @@ $service = mysqli_fetch_assoc($connect);
         </div>
     </div>
 </div>
-
-
-
 
 <?php 
 

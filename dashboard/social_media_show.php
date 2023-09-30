@@ -1,18 +1,14 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
-include('../config/db.php');
+    $select_social_media = "SELECT * FROM  social_medias";
+    $medias = mysqli_query($db_connect,$select_social_media);
 
+    // messege na thakle no data show korbe se jonno fetch_assoc
+    $single_port = mysqli_fetch_assoc($medias);  
 
-
-$select_social_media = "SELECT * FROM  social_medias";
-$medias = mysqli_query($db_connect,$select_social_media);
-
-// messege na thakle no data show korbe se jonno fetch_assoc
-
-$single_port = mysqli_fetch_assoc($medias);  
-
-$serial = 0;
+    $serial = 0;
 
 ?>
 
@@ -83,10 +79,10 @@ $serial = 0;
                         <?php if($single_port) :?>
                         <?php foreach($medias as $media) :?>
                         <tr>
-                            <th scope="row"><?= ++$serial ?></th>
-                            <td><?= $media['icon'] ?></td>
-                            <td><?= $media['link'] ?></td>
-                            <td>
+                            <th scope="row" class="align-middle"><?= ++$serial ?></th>
+                            <td class="align-middle"><?= $media['icon'] ?></td>
+                            <td class="align-middle"><?= $media['link'] ?></td>
+                            <td class="align-middle">
                                 <div class="btn-group">
                                     <a href="social_media_edit.php?edit_id=<?= $media['id'] ?>"
                                         class="btn btn-secondary btn-sm">Edit</a>
@@ -95,8 +91,6 @@ $serial = 0;
                                         class="btn btn-danger btn-sm">Delete</a>
                                 </div>
                             </td>
-
-
                         </tr>
 
                         <!-- data na thakle no data sms massege dekhabe -->
@@ -112,7 +106,6 @@ $serial = 0;
         </div>
     </div>
 </div>
-
 
 
 <?php 

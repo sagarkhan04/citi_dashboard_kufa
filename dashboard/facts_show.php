@@ -1,14 +1,11 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
-
-include('../config/db.php');
-
-
-$select_facts = "SELECT * FROM  facts";
-$facts = mysqli_query($db_connect,$select_facts);
-
-$serial = 0;
+    $select_facts = "SELECT * FROM  facts";
+    $facts = mysqli_query($db_connect,$select_facts);
+    $single_port = mysqli_fetch_assoc($facts);  
+    $serial = 0;
 
 ?>
 
@@ -41,6 +38,18 @@ $serial = 0;
             </div>
             <?php endif; unset($_SESSION['facts_insert']); ?>
             <!--========================= success sms end  ==========================-->
+            <!--========================= delete sms  ==========================-->
+            <?php if(isset($_SESSION['facts_delete'])) : ?>
+            <div class="alert alert-custom" role="alert">
+                <div class="custom-alert-icon icon-success"><i class="material-icons-outline">Done</i></div>
+                <div class="alert-content">
+                    <span class="alert-title">Successfully</span>
+                    <span class="alert-text"><?= ($_SESSION['facts_delete']); ?></span>
+                </div>
+
+            </div>
+            <?php endif; unset($_SESSION['facts_delete']); ?>
+            <!--========================= delete sms end  ==========================-->
 
             <!--========================= update sms  ==========================-->
             <?php if(isset($_SESSION['facts_update'])) : ?>
@@ -74,29 +83,35 @@ $serial = 0;
                         </tr>
                     </thead>
                     <tbody>
+                        <?php if($single_port) :?>
                         <?php foreach($facts as $fact) :?>
                         <tr>
-                            <th scope="row"><?= ++$serial ?></th>
-                            <td><i class="<?= $fact["icon"]; ?>"></i></td>
-                            <td><?= $fact["number"]; ?></td>
-                            <td><?= $fact["info_name"]; ?></td>
-                            <td>
-                                <a href="facts_edit.php?edit_id=<?= $fact['id'] ?>"
-                                    class="btn btn-secondary btn-sm">Edit</a>
+                            <th scope="row" class="align-middle"><?= ++$serial ?></th>
+                            <td class="align-middle"><i class="<?= $fact["icon"]; ?>"></i></td>
+                            <td class="align-middle"><?= $fact["number"]; ?></td>
+                            <td class="align-middle"><?= $fact["info_name"]; ?></td>
+                            <td class="align-middle">
+                                <div class="btn-group">
+                                    <a href="facts_edit.php?edit_id=<?= $fact['id'] ?>"
+                                        class="btn btn-secondary btn-sm">Edit</a>
 
-                                <a href="facts_post.php?delete_id=<?= $fact['id'] ?>"
-                                    class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="facts_post.php?delete_id=<?= $fact['id'] ?>"
+                                        class="btn btn-danger btn-sm">Delete</a>
+                                </div>
                             </td>
                         </tr>
                         <?php endforeach; ?>
+                        <?php else :?>
+                        <tr>
+                            <td colspan="6" class="text-center">No Data Found!</td>
+                        </tr>
+                        <?php endif;?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
-
-
 
 <?php 
 

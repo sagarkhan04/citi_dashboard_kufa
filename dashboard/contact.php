@@ -1,11 +1,10 @@
 <?php 
+    include('../config/db.php');
+    include('./extends/header.php');
 
-include('../config/db.php');
-include('./extends/header.php');
-
-$contact_select = "SELECT * FROM contact";
-$connect = mysqli_query($db_connect,$contact_select);
-$data = mysqli_fetch_assoc($connect);
+    $contact_select = "SELECT * FROM contacts";
+    $connect = mysqli_query($db_connect,$contact_select);
+    $data = mysqli_fetch_assoc($connect);
 
 ?>
 

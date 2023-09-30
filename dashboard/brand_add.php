@@ -1,15 +1,5 @@
 <?php 
-
-include('./extends/header.php');
-include('../config/db.php');
-
-
-$id = $_GET["edit_id"];
-
-$select_quary = "SELECT * FROM brands WHERE id='$id'";
-$connect = mysqli_query($db_connect,$select_quary);
-$brand = mysqli_fetch_assoc($connect);
-
+    include('./extends/header.php');
 ?>
 
 <div class="row">
@@ -32,15 +22,10 @@ $brand = mysqli_fetch_assoc($connect);
 
                     <div class="col-md-6">
                         <label for="" class="form-label">Brand Name</label>
-                        <input type="text" class="form-control" placeholder="Brand Name" name="brand_name"
-                            value="<?=$brand['brand_name']?>">
+                        <input type="text" class="form-control" placeholder="Brand Name" name="brand_name">
 
                     </div>
                     <div class="col-md-6">
-                        <div>
-                            <img src="../images/brand/<?= $brand['image']; ?>" alt=""
-                                style="width:150px; height:150px;">
-                        </div>
                         <label for="" class="form-label">Brand Image</label>
                         <input type="file" class="form-control" name="image">
 
@@ -54,9 +39,6 @@ $brand = mysqli_fetch_assoc($connect);
         </div>
     </div>
 </div>
-
-
-
 
 <?php 
 

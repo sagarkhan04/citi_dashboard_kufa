@@ -1,17 +1,14 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
-include('../config/db.php');
+    $select_education = "SELECT * FROM  educations";
+    $educations = mysqli_query($db_connect,$select_education);
 
+    // messege na thakle no data show korbe se jonno fetch_assoc
+    $single_port = mysqli_fetch_assoc($educations);  
 
-$select_education = "SELECT * FROM  educations";
-$educations = mysqli_query($db_connect,$select_education);
-
-// messege na thakle no data show korbe se jonno fetch_assoc
-
-$single_port = mysqli_fetch_assoc($educations);  
-
-$serial = 0;
+    $serial = 0;
 
 ?>
 
@@ -95,11 +92,11 @@ $serial = 0;
                         <?php if($single_port) :?>
                         <?php foreach($educations as $education) :?>
                         <tr>
-                            <th scope="row"><?= ++$serial ?></th>
-                            <td><?= $education['year'] ?></td>
-                            <td><?= $education['subject'] ?></td>
-                            <td><?= $education['progress'] ?></td>
-                            <td>
+                            <th scope="row" class="align-middle"><?= ++$serial ?></th>
+                            <td class="align-middle"><?= $education['year'] ?></td>
+                            <td class="align-middle"><?= $education['subject'] ?></td>
+                            <td class="align-middle"><?= $education['progress'] ?></td>
+                            <td class="align-middle">
                                 <div class="btn-group">
                                     <a href="education_edit.php?edit_id=<?= $education['id'] ?>"
                                         class="btn btn-secondary btn-sm">Edit</a>
@@ -125,7 +122,6 @@ $serial = 0;
         </div>
     </div>
 </div>
-
 
 
 <?php 

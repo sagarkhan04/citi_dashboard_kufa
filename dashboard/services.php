@@ -1,18 +1,14 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
-include('../config/db.php');
+    $select_service = "SELECT * FROM  services";
+    $services = mysqli_query($db_connect,$select_service);
 
+    // messege na thakle no data show korbe se jonno fetch_assoc
+    $single_port = mysqli_fetch_assoc($services);  
 
-
-$select_service = "SELECT * FROM  services";
-$services = mysqli_query($db_connect,$select_service);
-
-// messege na thakle no data show korbe se jonno fetch_assoc
-
-$single_port = mysqli_fetch_assoc($services);  
-
-$serial = 0;
+    $serial = 0;
 
 ?>
 
@@ -76,7 +72,6 @@ $serial = 0;
                             <th scope="col">Icon</th>
                             <th scope="col">Title</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Status</th>
                             <th scope="col">Action</th>
 
                         </tr>
@@ -85,21 +80,12 @@ $serial = 0;
                         <?php if($single_port) :?>
                         <?php foreach($services as $service) :?>
                         <tr>
-                            <th scope="row"><?= ++$serial ?></th>
-                            <td><?= $service['icon'] ?></td>
-                            <td><?= $service['title'] ?></td>
-                            <td><textarea name="" id="" cols="60" rows="2"
+                            <th scope="row" class="align-middle"><?= ++$serial ?></th>
+                            <td class="align-middle"><?= $service['icon'] ?></td>
+                            <td class="align-middle"><?= $service['title'] ?></td>
+                            <td class="align-middle"><textarea name="" id="" cols="60" rows="2"
                                     disabled><?= $service['description'] ?></textarea></td>
-                            <!--========================= active status  ==========================-->
-                            <td>
-                                <?php if($service['status'] == 'active') :?>
-                                <button class="btn btn-success"><?= $service['status'] ?></button>
-                                <?php else: ?>
-                                <button class="btn btn-danger"><?= $service['status'] ?></button>
-                                <?php endif;?>
-                            </td>
-                            <!--========================= active status end ==========================-->
-                            <td>
+                            <td class="align-middle">
                                 <div class="btn-group">
                                     <a href="service_edit.php?edit_id=<?= $service['id'] ?>"
                                         class="btn btn-secondary btn-sm">Edit</a>
@@ -123,8 +109,6 @@ $serial = 0;
         </div>
     </div>
 </div>
-
-
 
 <?php 
 

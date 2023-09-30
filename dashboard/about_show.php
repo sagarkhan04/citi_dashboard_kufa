@@ -1,17 +1,14 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
+    $select_about = "SELECT * FROM  abouts";
+    $abouts = mysqli_query($db_connect,$select_about);
+    $about =mysqli_fetch_assoc($abouts);
 
-include('../config/db.php');
-
-$select_about = "SELECT * FROM  abouts";
-$abouts = mysqli_query($db_connect,$select_about);
-$about =mysqli_fetch_assoc($abouts);
-
-
-$select_education = "SELECT * FROM  educations";
-$educations = mysqli_query($db_connect,$select_education);
-$education =mysqli_fetch_assoc($educations);
+    $select_education = "SELECT * FROM  educations";
+    $educations = mysqli_query($db_connect,$select_education);
+    $education =mysqli_fetch_assoc($educations);
 
 ?>
 
@@ -22,7 +19,30 @@ $education =mysqli_fetch_assoc($educations);
         </div>
     </div>
 </div>
+<!--========================= about success sms  ==========================-->
+<?php if(isset($_SESSION['about_update'])) : ?>
+<div class="alert alert-custom" role="alert">
+    <div class="custom-alert-icon icon-success"><i class="material-icons-outline">Done</i></div>
+    <div class="alert-content">
+        <span class="alert-title">Successfully</span>
+        <span class="alert-text"><?= ($_SESSION['about_update']); ?></span>
+    </div>
 
+</div>
+<?php endif; unset($_SESSION['about_update']); ?>
+<!--========================= about success sms end  ==========================-->
+<!--========================= about image success sms  ==========================-->
+<?php if(isset($_SESSION['image_update'])) : ?>
+<div class="alert alert-custom" role="alert">
+    <div class="custom-alert-icon icon-success"><i class="material-icons-outline">Done</i></div>
+    <div class="alert-content">
+        <span class="alert-title">Successfully</span>
+        <span class="alert-text"><?= ($_SESSION['image_update']); ?></span>
+    </div>
+
+</div>
+<?php endif; unset($_SESSION['image_update']); ?>
+<!--========================= about image success sms end  ==========================-->
 <div class="row">
     <div class="col-6">
         <div class="card">
@@ -31,7 +51,7 @@ $education =mysqli_fetch_assoc($educations);
             </div>
             <div class="card-body">
 
-                <form class="row g-3" action="about_edu_post.php" method="POST">
+                <form class="row g-3" action="about_post.php" method="POST">
 
                     <div class="col-md-12">
                         <label for="" class="form-label">About Top</label>
@@ -57,12 +77,12 @@ $education =mysqli_fetch_assoc($educations);
                 <h2>About Image</h2>
             </div>
             <div class="card-body">
-                <form action="profile_update.php" method="POST" enctype="multipart/form-data">
+                <form action="about_post.php" method="POST" enctype="multipart/form-data">
 
                     <!--=================== image update ===================================-->
-                    <img src="../images/profile/1-Admin-2023-09-15.jpg" alt="about_image"
-                        style="border-radius: 50%; width:100px; height:100px;"><br>
-                    <label for="exampleInputEmail1" class="form-label">image</label>
+                    <img src="../images/about/<?= $about['image'] ?>" alt="about_image"
+                        style=" width:100px; height:100px;"><br>
+
                     <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                         name="image">
                     <!--=================== image update end  ===================================-->

@@ -1,17 +1,12 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
+    $id = $_GET['edit_id'];
 
-include('./extends/header.php');
-include('../config/db.php');
-
-$id = $_GET['edit_id'];
-
-$select_quary = "SELECT * FROM portfolios WHERE id='$id'";
-$connect = mysqli_query($db_connect,$select_quary);
-$portfolio = mysqli_fetch_assoc($connect);  
-
-
-
+    $select_quary = "SELECT * FROM portfolios WHERE id='$id'";
+    $connect = mysqli_query($db_connect,$select_quary);
+    $portfolio = mysqli_fetch_assoc($connect); 
 
 ?>
 
@@ -91,9 +86,6 @@ $portfolio = mysqli_fetch_assoc($connect);
         </div>
     </div>
 </div>
-
-
-
 
 <?php 
 

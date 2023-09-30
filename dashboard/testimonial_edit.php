@@ -1,14 +1,12 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
+    $id = $_GET['edit_id'];
 
-include('../config/db.php');
-
-$id = $_GET['edit_id'];
-
-$select_quary = "SELECT * FROM testimonials WHERE id='$id'";
-$connect = mysqli_query($db_connect,$select_quary);
-$testimonial = mysqli_fetch_assoc($connect);
+    $select_quary = "SELECT * FROM testimonials WHERE id='$id'";
+    $connect = mysqli_query($db_connect,$select_quary);
+    $testimonial = mysqli_fetch_assoc($connect);
 
 ?>
 
@@ -75,11 +73,6 @@ $testimonial = mysqli_fetch_assoc($connect);
     </div>
 </div>
 
-
-
-
 <?php 
-
-include('./extends/footer.php')
-
+    include('./extends/footer.php')
 ?>

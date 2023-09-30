@@ -1,16 +1,14 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
-include('../config/db.php');
+    $select_brands = "SELECT * FROM  brands";
+    $brands = mysqli_query($db_connect,$select_brands);
 
+    // messege na thakle no data show korbe se jonno fetch_assoc
+    $single_port = mysqli_fetch_assoc($brands);
 
-$select_brands = "SELECT * FROM  brands";
-$brands = mysqli_query($db_connect,$select_brands);
-
-// messege na thakle no data show korbe se jonno fetch_assoc
-$single_port = mysqli_fetch_assoc($brands);
-
-$serial = 0;
+    $serial = 0;
 
 ?>
 
@@ -33,8 +31,9 @@ $serial = 0;
     </div>
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-between">
                 <h3>Brand List</h3>
+                <a href="brand_add.php" class="btn btn-primary">Add</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -52,12 +51,12 @@ $serial = 0;
                             <?php if($single_port) : ?>
                             <?php foreach($brands as $brand) :?>
                             <tr>
-                                <th scope="row"><?= ++$serial ?></th>
+                                <th scope="row" class="align-middle"><?= ++$serial ?></th>
                                 <td><?= $brand['brand_name']?></td>
 
-                                <td><img src="../images/testimonial/<?= $brand['image']?>" alt="image"
+                                <td class="align-middle"><img src="../images/brand/<?= $brand['image']?>" alt="image"
                                         style="width:80px; height:60px;"></td>
-                                <td>
+                                <td class="align-middle">
                                     <div class="btn-group">
                                         <a href="brand_edit.php?edit_id=<?= $brand['id'] ?>"
                                             class="btn btn-secondary btn-sm">Edit</a>
@@ -80,8 +79,6 @@ $serial = 0;
         </div>
     </div>
 </div>
-
-
 
 <?php 
 

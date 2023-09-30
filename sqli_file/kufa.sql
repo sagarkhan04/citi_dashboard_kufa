@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 28, 2023 at 05:22 PM
+-- Generation Time: Sep 30, 2023 at 06:34 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -39,7 +39,7 @@ CREATE TABLE `abouts` (
 --
 
 INSERT INTO `abouts` (`id`, `top_about`, `bottom_about`, `image`) VALUES
-(1, 'I\'m Will Smith, professional web developer with long time experience in this field​.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit deserunt, quas quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam asperiores maxime blanditiis culpa vitae velit. Numquam!', 'default.jpg');
+(1, 'I\'m Will Sagar Khan, professional web developer with long time experience in this field​.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit deserunt, quas quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam asperiores maxime blanditiis culpa vitae velit. Numquam!', '4-Sagar Khan-2023-09-29.png');
 
 -- --------------------------------------------------------
 
@@ -50,16 +50,30 @@ INSERT INTO `abouts` (`id`, `top_about`, `bottom_about`, `image`) VALUES
 CREATE TABLE `brands` (
   `id` int NOT NULL,
   `brand_name` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `image` varchar(200) COLLATE utf8mb4_general_ci NOT NULL
+  `image` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `brands`
+--
+
+INSERT INTO `brands` (`id`, `brand_name`, `image`) VALUES
+(12, 'New Sun', '2023-09-30-22.png'),
+(13, 'Splash Event', '2023-09-30-45.png'),
+(14, 'Party Poppers', '2023-09-30-31.png'),
+(15, '5box', '2023-09-30-16.png'),
+(16, 'Xoo', '2023-09-30-28.png'),
+(17, 'Party Poppers', '2023-09-30-23.png'),
+(18, 'Splash Event', '2023-09-30-39.png'),
+(19, '5box', '2023-09-30-05.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- Table structure for table `contacts`
 --
 
-CREATE TABLE `contact` (
+CREATE TABLE `contacts` (
   `id` int NOT NULL,
   `facebook` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `twitter` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
@@ -72,10 +86,10 @@ CREATE TABLE `contact` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `contact`
+-- Dumping data for table `contacts`
 --
 
-INSERT INTO `contact` (`id`, `facebook`, `twitter`, `instagram`, `linkedin`, `github`, `phone`, `email`, `address`) VALUES
+INSERT INTO `contacts` (`id`, `facebook`, `twitter`, `instagram`, `linkedin`, `github`, `phone`, `email`, `address`) VALUES
 (1, 'https://www.facebook.com/hridaykhan.sagor', 'https://twitter.com/sagarkhan04', 'https://www.instagram.com/hriday.khan_sagor01/', 'https://www.linkedin.com/in/sagar-khan-537383258/', 'https://github.com/sagarkhan04', '01700000000', 'sagar.cmt1920@gmail.com', 'Dhaka, Bangladesh');
 
 -- --------------------------------------------------------
@@ -96,9 +110,10 @@ CREATE TABLE `educations` (
 --
 
 INSERT INTO `educations` (`id`, `year`, `subject`, `progress`) VALUES
-(1, '2020', 'PHD of Interaction Design &amp; Animation', 100),
-(2, '2015', 'Iona Graves', 1982),
-(7, '2015', 'Iona Graves bangladesh', 20);
+(10, '2020', 'PHD of Interaction Design & Animation', 65),
+(11, '2016', 'Master of Database Administration', 75),
+(12, '2010', 'Bachelor of Computer Engineering', 85),
+(13, '2005', 'Diploma of Computer', 90);
 
 -- --------------------------------------------------------
 
@@ -118,9 +133,11 @@ CREATE TABLE `facts` (
 --
 
 INSERT INTO `facts` (`id`, `number`, `info_name`, `icon`) VALUES
-(4, '381', 'Grady Orr', 'fab fa-adversal'),
-(6, '733', 'Prescott Pace', 'fab fa-btc'),
-(7, '550', 'Cullen Cooke', 'fab fa-angrycreative');
+(21, '245', 'FEATURE ITEM', 'fab fa-accusoft'),
+(22, '345', 'ACTIVE PRODUCTS', 'fas fa-hand-peace'),
+(23, '39', 'YEAR EXPERIENCE', 'fab fa-bandcamp'),
+(24, '3000', 'OUR MAN CLIENTS', 'fas fa-male'),
+(25, '1800', 'OUR WOMAN CLIENTS', 'fas fa-female');
 
 -- --------------------------------------------------------
 
@@ -166,12 +183,12 @@ CREATE TABLE `portfolios` (
 --
 
 INSERT INTO `portfolios` (`id`, `title`, `design_name`, `description_short`, `description_long`, `image`, `status`) VALUES
-(18, 'Giselle Roy', 'Hayfa Weber', 'Samson Beck', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.', '8d420fa35754d1f1c19969c88780314d.png', 'active'),
-(19, 'Keane Rivers', 'Leah Prince', 'Lorem ipsum, dolor', '', '2023-09-22-10.jpg', 'active'),
-(20, 'Rigel Walls', 'Odette Hodges', 'Halee Copeland', '', '2023-09-22-30.png', 'active'),
-(21, 'Tanek Oliver', 'Jescie Frederick', 'Nina Singleton', '', '2023-09-22-52.png', 'active'),
-(22, 'Dahlia Robinson', 'Yetta Thornton', 'Oleg Gilbert', '', '2023-09-23-59.jpg', 'active'),
-(24, 'Lavinia Pollard', 'Joshua Cash', 'Deborah Hurst', '', '9f8785c7f9b578bec2c09e616568d270.png', 'active');
+(26, 'DESIGN', 'HAMBLE TRIANGLE', 'MORE INFORMATION', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.', 'bc6fe82635b1429d3e886eec0fc34f49.jpg', 'active'),
+(27, 'VIDEO', 'DARK BEAUTY', 'MORE INFORMATION ', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.', '2023-09-30-38.jpg', 'active'),
+(28, 'AUDIO', 'GILROY LIMBO', 'MORE INFORMATION ', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.', '2023-09-30-01.jpg', 'active'),
+(29, 'DESIGN', 'IPSUM WHICH', 'MORE INFORMATION ', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates ', '2023-09-30-39.jpg', 'active'),
+(30, 'CREATIVE', 'EIUSMOD TEMPOR', 'MORE INFORMATION ', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates ', 'bf2fe6582ed9ead9161a3d6f6b1d6858.jpg', 'active'),
+(31, 'UX/UI', 'AGAIN THERE', 'MORE INFORMATION ', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates harum vitae? Ea labore earum dolores suscipit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam nobis error aliquid obcaecati a aliquam, dolorem, alias dolor dicta, corrupti sit assumenda voluptates ', '2023-09-30-05.jpg', 'active');
 
 -- --------------------------------------------------------
 
@@ -192,9 +209,12 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `title`, `description`, `icon`, `status`) VALUES
-(32, 'Web Design', 'orem Ipsum es simplemente el texto de relleno de las imprentas ', 'fa fa-globe', 'active'),
-(33, 'Web Development', 'orem Ipsum es simplemente el texto de relleno de las', 'fas fa-allergies', 'active'),
-(36, 'Voluptatibus aut exe', 'Incidunt explicabo', 'fa fa-ambulance', 'active');
+(37, 'CREATIVE DESIGN', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.', 'fab fa-react', 'active'),
+(38, 'UNLIMITED FEATURES', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.', 'fab fa-free-code-camp', 'active'),
+(39, 'ULTRA RESPONSIVE', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.', 'fal fa-desktop', 'active'),
+(40, 'CREATIVE IDEAS', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.', 'fal fa-lightbulb-on', 'active'),
+(41, 'EASY CUSTOMIZATION', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.', 'fal fa-edit', 'active'),
+(42, 'SUPPER SUPPORT', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.', 'fal fa-headset', 'active');
 
 -- --------------------------------------------------------
 
@@ -241,9 +261,9 @@ CREATE TABLE `testimonials` (
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `sub_name`, `description`, `image`, `status`) VALUES
-(1, 'Sagar Khan', 'Bengali original', 'Become an IT Pro & Rule the Digital World\r\nWith a vision to turn manpower into assets, Creative IT Institute is ready to enhance your learning experience with skilled mentors and updated curriculum. Pick your desired course from more than 30 trendy options.', '2023-09-20-09.png', 'active'),
-(2, 'Sagar Khan', 'Romanisation of Bengali', 'Become an IT Pro & Rule the Digital World\r\nWith a vision to turn manpower into assets, Creative IT Institute is ready to enhance your learning experience with skilled mentors and updated curriculum. Pick your desired course from more than 30 trendy options.', '2023-09-20-21.png', 'active'),
-(3, 'Claudia Waters', 'Petra Morgan', 'Become an IT Pro & Rule the Digital World\r\nWith a vision to turn manpower into assets, Creative IT Institute is ready to enhance your learning experience with skilled mentors and updated curriculum. Pick your desired course from more than 30 trendy options.', '2023-09-20-06.jpg', 'active');
+(6, 'Berlin', 'Berlin Money Heist Character', 'An event is a message sent by an object to signal the occur rence of an action. The action can causd user interaction such as a button click, or it can result', '2023-09-30-12.png', 'active'),
+(7, 'Nairobi', 'Berlin Money Heist Character', 'An event is a message sent by an object to signal the occur rence of an action. The action can causd user interaction such as a button click, or it can result', '2023-09-30-11.png', 'active'),
+(8, 'Tokyo', 'Berlin Money Heist Character', 'An event is a message sent by an object to signal the occur rence of an action. The action can causd user interaction such as a button click, or it can result', '2023-09-30-46.jpeg', 'active');
 
 -- --------------------------------------------------------
 
@@ -283,9 +303,9 @@ ALTER TABLE `brands`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `contact`
+-- Indexes for table `contacts`
 --
-ALTER TABLE `contact`
+ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -350,25 +370,25 @@ ALTER TABLE `abouts`
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `contact`
+-- AUTO_INCREMENT for table `contacts`
 --
-ALTER TABLE `contact`
+ALTER TABLE `contacts`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `educations`
 --
 ALTER TABLE `educations`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `facts`
 --
 ALTER TABLE `facts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `mails`
@@ -380,13 +400,13 @@ ALTER TABLE `mails`
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `social_medias`
@@ -398,7 +418,7 @@ ALTER TABLE `social_medias`
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

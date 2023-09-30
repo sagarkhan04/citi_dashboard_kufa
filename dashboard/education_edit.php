@@ -1,15 +1,12 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
-include('../config/db.php');
+    $id = $_GET["edit_id"];
 
-
-$id = $_GET["edit_id"];
-
-$select_quary = "SELECT * FROM educations WHERE id='$id'";
-$connect = mysqli_query($db_connect,$select_quary);
-$education = mysqli_fetch_assoc($connect);
-
+    $select_quary = "SELECT * FROM educations WHERE id='$id'";
+    $connect = mysqli_query($db_connect,$select_quary);
+    $education = mysqli_fetch_assoc($connect);
 
 ?>
 
@@ -56,11 +53,8 @@ $education = mysqli_fetch_assoc($connect);
     </div>
 </div>
 
-
-
-
 <?php 
 
-include('./extends/footer.php')
+    include('./extends/footer.php')
 
 ?>

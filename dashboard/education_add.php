@@ -1,12 +1,10 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
-
-include('../config/db.php');
-
-$select_education = "SELECT * FROM  educations";
-$educations = mysqli_query($db_connect,$select_education);
-$education =mysqli_fetch_assoc($educations);
+    $select_education = "SELECT * FROM  educations";
+    $educations = mysqli_query($db_connect,$select_education);
+    $education =mysqli_fetch_assoc($educations);
 
 ?>
 
@@ -49,11 +47,8 @@ $education =mysqli_fetch_assoc($educations);
     </div>
 </div>
 
-
-
-
 <?php 
 
-include('./extends/footer.php')
+    include('./extends/footer.php')
 
 ?>

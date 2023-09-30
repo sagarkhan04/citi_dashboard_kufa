@@ -1,16 +1,14 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
-include('../config/db.php');
+    $select_portfolios = "SELECT * FROM  portfolios";
+    $portfolios = mysqli_query($db_connect,$select_portfolios);
 
+    // messege na thakle no data show korbe se jonno fetch_assoc
+    $single_port = mysqli_fetch_assoc($portfolios);
 
-$select_portfolios = "SELECT * FROM  portfolios";
-$portfolios = mysqli_query($db_connect,$select_portfolios);
-
-// messege na thakle no data show korbe se jonno fetch_assoc
-$single_port = mysqli_fetch_assoc($portfolios);
-
-$serial = 0;
+    $serial = 0;
 
 ?>
 
@@ -83,34 +81,32 @@ $serial = 0;
                         <?php foreach($portfolios as $portfolio) :?>
                         <tr>
                             <th scope="row"><?= ++$serial ?></th>
-                            <td><img src="../images/portfolio/<?= $portfolio['image']; ?>" alt="image"
-                                    style="width:80px; height:60px;"></td>
-                            <td><?= $portfolio["title"]; ?></td>
+                            <td><img class="mt-3 img-fluid" src="../images/portfolio/<?= $portfolio['image']; ?>"
+                                    alt="image" style="width:80px; height:40px;"></td>
+                            <td class="align-middle" style="font-size:12px;"><?= $portfolio["title"]; ?></td>
 
-                            <td><?= $portfolio["design_name"]; ?></td>
+                            <td class="align-middle" style="font-size:12px;"><?= $portfolio["design_name"]; ?></td>
 
-                            <td><?= $portfolio['description_short']; ?></td>
+                            <td class="align-middle" style="font-size:12px;"><?= $portfolio['description_short']; ?>
+                            </td>
 
-                            <td><textarea name="" id="" cols="30" rows="2"
+                            <td class="align-middle"><textarea name="" id="" cols="30" rows="2"
                                     disabled><?= $portfolio['description_long']; ?></textarea></td>
 
                             <!--============== active status session ============-->
-                            <td>
+                            <td class="align-middle">
                                 <?php if($portfolio['status'] == 'active') :?>
-
                                 <a href="portfolio_post.php?change_status=<?=$portfolio['id']?>"
-                                    class="btn btn-success"><?= $portfolio['status']?></a>
-
+                                    class="btn btn-success btn-sm"><?= $portfolio['status']?></a>
                                 <?php else: ?>
 
                                 <a href="portfolio_post.php?change_status=<?=$portfolio['id']?>"
-                                    class="btn btn-danger"><?= $portfolio['status']?></a>
-
+                                    class="btn btn-danger btn-sm"><?= $portfolio['status']?></a>
                                 <?php endif; ?>
                             </td>
 
-                            <td>
-                                <div class="btn-group mt-3">
+                            <td class="align-middle">
+                                <div class="btn-group">
                                     <a href="portfolio_edit.php?edit_id=<?= $portfolio['id'] ?>"
                                         class="btn btn-secondary btn-sm">Edit</a>
 
@@ -131,7 +127,6 @@ $serial = 0;
         </div>
     </div>
 </div>
-
 
 
 <?php 

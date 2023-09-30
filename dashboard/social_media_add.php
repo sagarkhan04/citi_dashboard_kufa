@@ -1,7 +1,6 @@
 <?php 
-
-include('./extends/header.php');
-include('./icons.php');
+    include('./extends/header.php');
+    include('./icons.php');
 ?>
 
 <div class="row">
@@ -13,7 +12,7 @@ include('./icons.php');
 </div>
 
 <div class="row">
-    <div class="col-6">
+    <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h3>Social media add</h3>
@@ -138,8 +137,6 @@ include('./icons.php');
 </div> -->
 
 </div>
-
-
 
 
 <?php 

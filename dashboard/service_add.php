@@ -1,7 +1,6 @@
 <?php 
-
-include('./extends/header.php');
-include('./icons.php');
+    include('./extends/header.php');
+    include('./icons.php');
 
 ?>
 
@@ -87,9 +86,7 @@ include('./icons.php');
                     }
                     </script>
 
-                    <!--=================== icon input ===================-->
-
-
+                    <!--=================== icon input end ===================-->
 
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary" name="insert_btn">INSERT</button>
@@ -99,9 +96,6 @@ include('./icons.php');
         </div>
     </div>
 </div>
-
-
-
 
 <?php 
 

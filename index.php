@@ -1,52 +1,40 @@
 <?php 
+    include('./config/db.php');
 
-include('./config/db.php');
+    $users_select_query ="SELECT * FROM users";
+    $users_connect = mysqli_query($db_connect,$users_select_query);
+    $users = mysqli_fetch_assoc($users_connect);
 
-$users_select_query ="SELECT * FROM users";
-$users_connect = mysqli_query($db_connect,$users_select_query);
-$users = mysqli_fetch_assoc($users_connect);
+    $select_service = "SELECT * FROM  services";
+    $services = mysqli_query($db_connect,$select_service);
 
-$select_service = "SELECT * FROM  services";
-$services = mysqli_query($db_connect,$select_service);
+    $select_facts = "SELECT * FROM  facts";
+    $facts = mysqli_query($db_connect,$select_facts);
 
+    $select_portfolios = "SELECT * FROM  portfolios WHERE status='active'";
+    $portfolios = mysqli_query($db_connect,$select_portfolios);
 
-$select_facts = "SELECT * FROM  facts";
-$facts = mysqli_query($db_connect,$select_facts);
+    $select_testimonial = "SELECT * FROM testimonials";
+    $testimonials = mysqli_query($db_connect,$select_testimonial);
 
+    $contact_select = "SELECT * FROM contacts";
+    $contact_select_connect = mysqli_query($db_connect,$contact_select);
+    $contact_data = mysqli_fetch_assoc($contact_select_connect);
 
+    $social_media_select = "SELECT * FROM social_medias";
+    $social_media_select_connect = mysqli_query($db_connect,$social_media_select);
 
-$select_portfolios = "SELECT * FROM  portfolios WHERE status='active'";
-$portfolios = mysqli_query($db_connect,$select_portfolios);
+    $select_about = "SELECT * FROM  abouts";
+    $abouts = mysqli_query($db_connect,$select_about);
+    $about = mysqli_fetch_assoc($abouts);
 
+    $select_education = "SELECT * FROM  educations";
+    $educations = mysqli_query($db_connect,$select_education);
 
-$select_testimonial = "SELECT * FROM testimonials";
-$testimonials = mysqli_query($db_connect,$select_testimonial);
-
-$contact_select = "SELECT * FROM contact";
-$contact_select_connect = mysqli_query($db_connect,$contact_select);
-$contact_data = mysqli_fetch_assoc($contact_select_connect);
-
-
-$social_media_select = "SELECT * FROM social_medias";
-$social_media_select_connect = mysqli_query($db_connect,$social_media_select);
-
-
-
-$select_about = "SELECT * FROM  abouts";
-$abouts = mysqli_query($db_connect,$select_about);
-$about = mysqli_fetch_assoc($abouts);
-
-
-
-$select_education = "SELECT * FROM  educations";
-$educations = mysqli_query($db_connect,$select_education);
-$education = mysqli_fetch_assoc($educations);
-
+    $select_brands = "SELECT * FROM  brands";
+    $brands = mysqli_query($db_connect,$select_brands);
 
 ?>
-
-
-
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -54,7 +42,7 @@ $education = mysqli_fetch_assoc($educations);
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Kufa - Personal Portfolio HTML5 Template</title>
+    <title>Kufa - Personal Portfolio</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -143,16 +131,15 @@ $education = mysqli_fetch_assoc($educations);
             <div class="side-info mb-30">
                 <div class="contact-list mb-30">
                     <h4>Office Address</h4>
-                    <p>123/A, Miranda City Likaoli
-                        Prikano, Dope</p>
+                    <p><?=$contact_data["address"];?></p>
                 </div>
                 <div class="contact-list mb-30">
                     <h4>Phone Number</h4>
-                    <p>+0989 7876 9865 9</p>
+                    <p></span><a href="tel:<?=$contact_data["phone"];?>"><?=$contact_data["phone"];?></a></p>
                 </div>
                 <div class="contact-list mb-30">
                     <h4>Email Address</h4>
-                    <p>info@example.com</p>
+                    <p></span><a href="mailto:<?=$contact_data["email"];?>"><?=$contact_data["email"];?></a></p>
                 </div>
             </div>
             <div class="social-icon-right mt-20">
@@ -160,10 +147,6 @@ $education = mysqli_fetch_assoc($educations);
                 <?php foreach ($social_media_select_connect as $data): ?>
                 <a href="<?=$data["link"];?>"><i class="<?=$data["icon"];?>"></i></a>
                 <?php endforeach; ?>
-                <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a> -->
             </div>
         </div>
         <div class="offcanvas-overly"></div>
@@ -189,9 +172,6 @@ $education = mysqli_fetch_assoc($educations);
                                     <?php foreach ($social_media_select_connect as $data): ?>
                                     <li><a href="<?=$data["link"];?>"><i class="<?=$data["icon"];?>"></i></a></li>
                                     <?php endforeach; ?>
-                                    <!-- <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li> -->
                                 </ul>
                             </div>
                             <a href="#portfolio" class="btn wow fadeInUp" data-wow-delay="1s">SEE PORTFOLIOS</a>
@@ -215,7 +195,7 @@ $education = mysqli_fetch_assoc($educations);
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="about-img">
-                            <img src="./frontend_assets/img/banner/banner_img2.png" title="me-01" alt="me-01">
+                            <img src="./images/about/<?= $about['image'] ?>" title="me-01" alt="img">
                         </div>
                     </div>
                     <div class="col-lg-6 pr-90">
@@ -271,7 +251,7 @@ $education = mysqli_fetch_assoc($educations);
                             <i class="<?= $service['icon']?>"></i>
                             <h3><?= $service['title']?></h3>
                             <p>
-                                <?= $service['description']?>">
+                                <?= $service['description']?>
                             </p>
                         </div>
                     </div>
@@ -381,38 +361,16 @@ $education = mysqli_fetch_assoc($educations);
         <div class="barnd-area pt-100 pb-100">
             <div class="container">
                 <div class="row brand-active">
+                    <?php foreach($brands as $brand) :?>
                     <div class="col-xl-2">
                         <div class="single-brand">
-                            <img src="./frontend_assets/img/brand/brand_img01.png" alt="img">
+                            <img src="./images/brand/<?= $brand['image']?>" alt="img">
                         </div>
                     </div>
-                    <div class="col-xl-2">
-                        <div class="single-brand">
-                            <img src="./frontend_assets/img/brand/brand_img02.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-xl-2">
-                        <div class="single-brand">
-                            <img src="./frontend_assets/img/brand/brand_img03.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-xl-2">
-                        <div class="single-brand">
-                            <img src="./frontend_assets/img/brand/brand_img04.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-xl-2">
-                        <div class="single-brand">
-                            <img src="./frontend_assets/img/brand/brand_img05.png" alt="img">
-                        </div>
-                    </div>
-                    <div class="col-xl-2">
-                        <div class="single-brand">
-                            <img src="./frontend_assets/img/brand/brand_img03.png" alt="img">
-                        </div>
-                    </div>
+                    <?php endforeach;?>
                 </div>
             </div>
+        </div>
         </div>
         <!-- brand-area-end -->
 
@@ -428,7 +386,7 @@ $education = mysqli_fetch_assoc($educations);
                         <div class="contact-content">
                             <p>Event definition is - somthing that happens occurre How evesnt sentence. Synonym when an
                                 unknown printer took a galley.</p>
-                            <h5>OFFICE IN <span>NEW YORK</span></h5>
+                            <h5>OFFICE IN <span>Bangladesh</span></h5>
                             <div class="contact-list">
                                 <ul>
                                     <li><i class="fas fa-map-marker"></i><span>Address
@@ -479,9 +437,6 @@ $education = mysqli_fetch_assoc($educations);
         </div>
     </footer>
     <!-- footer-end -->
-
-
-
 
 
     <!-- JS here -->

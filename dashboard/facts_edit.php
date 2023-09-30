@@ -1,14 +1,13 @@
 <?php 
+    include('./extends/header.php');
+    include('./icons.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
-include('./icons.php');
-include('../config/db.php');
+    $id = $_GET['edit_id'];
 
-$id = $_GET['edit_id'];
-
-$select_quary = "SELECT * FROM facts WHERE id='$id'";
-$connect = mysqli_query($db_connect,$select_quary);
-$facts = mysqli_fetch_assoc($connect);
+    $select_quary = "SELECT * FROM facts WHERE id='$id'";
+    $connect = mysqli_query($db_connect,$select_quary);
+    $facts = mysqli_fetch_assoc($connect);
 
 ?>
 
@@ -47,7 +46,7 @@ $facts = mysqli_fetch_assoc($connect);
 
                     <div class="col-md-6 ">
                         <label for="inputEmail4" class="form-label">Number</label>
-                        <input type="text" class="form-control" name="number" value="<?= $facts['number'] ?>">
+                        <input type="number" class="form-control" name="number" value="<?= $facts['number'] ?>">
                         <input hidden type=" text" value="<?= $facts['id'] ?>" name="facts_id">
                     </div>
 
@@ -82,9 +81,7 @@ $facts = mysqli_fetch_assoc($connect);
                     }
                     </script>
 
-                    <!--=================== icon input ===================-->
-
-
+                    <!--=================== icon input end ===================-->
 
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary" name="facts_edit_btn">Fact
@@ -95,8 +92,6 @@ $facts = mysqli_fetch_assoc($connect);
         </div>
     </div>
 </div>
-
-
 
 
 <?php 

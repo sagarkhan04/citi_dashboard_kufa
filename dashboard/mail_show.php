@@ -1,13 +1,11 @@
 <?php 
+    include('./extends/header.php');
+    include('../config/db.php');
 
-include('./extends/header.php');
+    $select_mail = "SELECT * FROM  mails";
+    $mails = mysqli_query($db_connect,$select_mail);
 
-include('../config/db.php');
-
-$select_mail = "SELECT * FROM  mails";
-$mails = mysqli_query($db_connect,$select_mail);
-
-$serial = 0;
+    $serial = 0;
 
 ?>
 
@@ -48,13 +46,14 @@ $serial = 0;
                     <tbody>
                         <?php foreach($mails as $mail) :?>
                         <tr>
-                            <th scope="row"><?= ++$serial ?></th>
-                            <td><?= $mail["name"]; ?></td>
-                            <td><?= $mail["email"]; ?></td>
-                            <td><?= $mail["subject"]; ?></td>
-                            <td><textarea disabled name="" id="" cols="60" rows="2"><?= $mail["message"]; ?></textarea>
+                            <th scope="row" class="align-middle"><?= ++$serial ?></th>
+                            <td class="align-middle"><?= $mail["name"]; ?></td>
+                            <td class="align-middle"><?= $mail["email"]; ?></td>
+                            <td class="align-middle"><?= $mail["subject"]; ?></td>
+                            <td class="align-middle"><textarea disabled name="" id="" cols="60"
+                                    rows="2"><?= $mail["message"]; ?></textarea>
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 <!-- <a href="mail_edit.php?edit_id=<?= $mail['id'] ?>"
                                     class="btn btn-secondary btn-sm">Edit</a> -->
 
@@ -69,8 +68,6 @@ $serial = 0;
         </div>
     </div>
 </div>
-
-
 
 <?php 
 

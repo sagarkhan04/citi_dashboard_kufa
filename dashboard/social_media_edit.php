@@ -1,14 +1,13 @@
 <?php 
+    include('../config/db.php');
+    include('./extends/header.php');
+    include('./icons.php');
 
-include('../config/db.php');
-include('./extends/header.php');
-include('./icons.php');
+    $id = $_GET["edit_id"];
 
-$id = $_GET["edit_id"];
-
-$select_social_media = "SELECT * FROM  social_medias WHERE id = '$id'";
-$medias = mysqli_query($db_connect,$select_social_media);
-$media = mysqli_fetch_assoc($medias);
+    $select_social_media = "SELECT * FROM  social_medias WHERE id = '$id'";
+    $medias = mysqli_query($db_connect,$select_social_media);
+    $media = mysqli_fetch_assoc($medias);
 
 ?>
 
