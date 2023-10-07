@@ -100,7 +100,8 @@ session_start();
 
 
                     <!--========================= java  show icon  ==========================-->
-                    <label for="c_icon"><input type="checkbox" onclick="myFunction()" id="c_icon">Show Password</label>
+                    <label for="c_icon" class="mt-2"><input type="checkbox" onclick="myFunction()" id="c_icon"> Show
+                        Password</label>
 
                     <script>
                     function myFunction() {

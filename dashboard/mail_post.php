@@ -60,7 +60,11 @@
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
-            echo 'Thank You,Message has been Successfully';
+            // echo "Thanks Sendd Email Successfuly";
+
+            header("location: index.php");
+
+            
             }
         }
 

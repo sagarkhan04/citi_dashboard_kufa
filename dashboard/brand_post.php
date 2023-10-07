@@ -29,6 +29,7 @@
 
     }
 
+// delete session
 
     if(isset($_GET['delete_id'])){
         $id = $_GET['delete_id'];
@@ -40,6 +41,8 @@
         $_SESSION['brand_delete'] = 'Brand Delete Successfully';
         header("location: brand_show.php");
     }
+
+    // update session 
 
     if(isset($_POST['update_btn'])){
         $id =$_POST['id'];

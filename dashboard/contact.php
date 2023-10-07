@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col">
         <div class="page-description">
-            <h1>Defult Page</h1>
+            <h1>Office Location</h1>
         </div>
     </div>
 </div>
@@ -20,13 +20,13 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3>Defult page</h3>
+                <h3>Location</h3>
             </div>
             <div class="card-body">
 
                 <form class="row g-3" action="contact_post.php" method="POST" enctype="multipart/form-data">
 
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <label for="" class="form-label">Facebook</label>
                         <input type="text" class="form-control" placeholder="Facebook" name="facebook"
                             value="<?= $data['facebook'] ?>">
@@ -56,7 +56,7 @@
                         <input type="text" class="form-control" placeholder="LinkedIn" name="linkedin"
                             value="<?= $data['linkedin'] ?>">
 
-                    </div>
+                    </div> -->
 
                     <div class="col-md-12">
                         <label for="" class="form-label">Email</label>
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary" name="insert_btn">Update Contact Info</button>
+                        <button type="submit" class="btn btn-primary" name="insert_btn">Update loc.</button>
                     </div>
                 </form>
             </div>

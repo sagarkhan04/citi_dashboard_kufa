@@ -2,6 +2,7 @@
     include('./config/db.php');
 
     $id = $_GET["id"];
+    
     $get_query = "SELECT * FROM  portfolios WHERE id = '$id' AND status='active'";
     $connect = mysqli_query($db_connect, $get_query);
     $single_data = mysqli_fetch_assoc($connect);

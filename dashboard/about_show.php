@@ -55,18 +55,18 @@
 
                     <div class="col-md-12">
                         <label for="" class="form-label">About Top</label>
-                        <input type="text" class="form-control" placeholder="" name="top_about"
-                            value="<?= $about['top_about']?>">
+                        <textarea name="" id="" cols="6" rows="4" type="text" class="form-control" placeholder=""
+                            name="top_about"><?= $about['top_about']?></textarea>
                     </div>
                     <div class="col-md-12">
-                        <label for="" class="form-label">About Button</label>
-                        <input type="text" class="form-control" placeholder="" name="bottom_about"
-                            value="<?= $about['bottom_about']?>">
+                        <label for="" class="form-label">About Middle</label>
+                        <textarea name="" id="" cols="6" rows="4" type="text" class="form-control" placeholder=""
+                            name="bottom_about"><?= $about['bottom_about']?></textarea>
                     </div>
                     <div class="col-md-12">
                         <label for="" class="form-label">About Footer</label>
-                        <input type="text" class="form-control" placeholder="" name="footer_about"
-                            value="<?= $about['footer_about']?>">
+                        <textarea name="" id="" cols="6" rows="4" type="text" class="form-control" placeholder=""
+                            name="footer_about"><?= $about['footer_about']?></textarea>
                     </div>
                     <div class="col-6">
                         <button type="submit" class="btn btn-primary" name="about_btn">About Update</button>
@@ -86,9 +86,9 @@
 
                     <!--=================== image update ===================================-->
                     <img src="../images/about/<?= $about['image'] ?>" alt="about_image"
-                        style=" width:100px; height:100px;"><br>
+                        style=" width:190px; height:190px;"><br>
 
-                    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    <input type="file" class="form-control mt-3" id="exampleInputEmail1" aria-describedby="emailHelp"
                         name="image">
                     <!--=================== image update end  ===================================-->
 

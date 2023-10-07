@@ -1,6 +1,5 @@
 <?php 
     include('./config/db.php');
-
     $users_select_query ="SELECT * FROM users";
     $users_connect = mysqli_query($db_connect,$users_select_query);
     $users = mysqli_fetch_assoc($users_connect);
@@ -84,9 +83,9 @@
                     <div class="col-xl-12">
                         <div class="main-menu">
                             <nav class="navbar navbar-expand-lg">
-                                <a href="index.html" class="navbar-brand logo-sticky-none"><img
+                                <a href="index.php" class="navbar-brand logo-sticky-none"><img
                                         src="./frontend_assets/img/logo/logo.png" alt="Logo"></a>
-                                <a href="index.html" class="navbar-brand s-logo-none"><img
+                                <a href="index.php" class="navbar-brand s-logo-none"><img
                                         src="./frontend_assets/img/logo/s_logo.png" alt="Logo"></a>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarNav">
@@ -120,7 +119,7 @@
                 </button>
             </div>
             <div class="logo-side mb-30">
-                <a href="index-2.html">
+                <a href="index.php">
                     <img src="./frontend_assets/img/logo/logo.png" alt="" />
                 </a>
             </div>
@@ -399,6 +398,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-6">
                         <div class="contact-form">
                             <form action="dashboard/mail_post.php" method="POST">
@@ -406,13 +406,30 @@
                                 <input type="email" placeholder="your email *" class="text-lowercase" name="email">
                                 <input type="text" placeholder="subject" class="text-lowercase" name="subject">
                                 <textarea id="message" placeholder="your message *" name="message"></textarea>
-                                <button type="submit" class="btn btn-secondary" name="mail_send_btn">SEND</button>
+                                <button type="submit" class="btn btn-secondary" name="mail_send_btn" data-toggle="modal"
+                                    data-target="#exampleModal">SEND</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Thank You,Message has been Successfully
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- contact-area-end -->
 
     </main>

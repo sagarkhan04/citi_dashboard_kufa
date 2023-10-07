@@ -64,8 +64,9 @@
                     </div>
                     <div class="col-md-7">
                         <label for="" class="form-label">Description Long</label>
-                        <input type="text" class="form-control" placeholder="Description..." name="description_long"
-                            value="<?= $portfolio['description_long'] ?>">
+                        <textarea name="" id="" cols="30" rows="10" type="text" class="form-control"
+                            placeholder="Description..."
+                            name="description_long"><?= $portfolio['description_long'] ?></textarea>
 
                     </div>
                     <div>
